@@ -57,7 +57,7 @@
     ]
   },
   {
-    "id": "natur2",
+    "id": "elemente",
     "text": "Fühlst du dich eher hingezogen zu Erde, Feuer, Wasser oder Luft?",
     "cluster": "aussehen",
     "answers": [
@@ -91,7 +91,7 @@
     "cluster": "zukunft",
     "answers": [
       { "text": "optimistisch", "tags": { "optimistisch": 1 } },
-      { "text": "realistisch", "tags": { "realistisch": 1 } }
+      { "text": "realistisch", "tags": { "realistisch": 1, "dystopisch": 1 } }
     ]
   },
   {
@@ -99,8 +99,8 @@
     "text": "Wer gewinnt in deinen Augen, eine höhere Macht oder Helden?",
     "cluster": "gesellschaft",
     "answers": [
-      { "text": "höhere Macht", "tags": { "göttlich": 1 } },
-      { "text": "Helden", "tags": { "heroisch": 1 } }
+      { "text": "höhere Macht", "tags": { "göttlich": 1, "struktur" : 1 } },
+      { "text": "Helden", "tags": { "heroisch": 1, "freiheit": 1 } }
     ]
   },
   {
@@ -108,8 +108,8 @@
     "text": "Glaubst du an Übernatürliches?",
     "cluster": "gesellschaft",
     "answers": [
-      { "text": "Ja", "tags": { "göttlich": 1, "übernatürlich": 1 } },
-      { "text": "Nein", "tags": { "realistisch": 1 } }
+      { "text": "Ja", "tags": { "übernatürlich": 1, "fantastisch": 1 } },
+      { "text": "Nein", "tags": { "realistisch": 1, "echt": 1   } }
     ]
   },
   {
@@ -120,6 +120,51 @@
       { "text": "Nacht", "tags": { "nacht": 1 } },
       { "text": "Tag", "tags": { "tag": 1 } }
     ]
+  },
+  {
+    "id": "Farbe",
+    "text": "Welche Farbe spricht gerade am meisten zu dir?",
+    "cluster": "flavor",
+    "answers": [
+      { "text": "rot", "tags": { "rot": 1 } },
+      { "text": "blau", "tags": { "blau": 1 } },
+      { "text": "grün", "tags": { "grün": 1 } },
+      { "text": "gelb", "tags": { "gelb": 1 } },
+      { "text": "schwarz", "tags": { "schwarz": 1 } },
+      { "text": "weiß", "tags": { "weiß": 1 } },
+      { "text": "lila", "tags": { "lila": 1 } },
+      { "text": "orange", "tags": { "orange": 1 } },
+      { "text": "pink", "tags": { "pink": 1 } }
+    ]
+  },
+  {
+    "id": "fortbewegung",
+    "text": "Würdest du lieber gut schwimmen, fliegen oder klettern können?",
+    "cluster": "flavor",
+    "answers": [
+      { "text": "schwimmen", "tags": { "wasser": 1 } },
+      { "text": "fliegen", "tags": { "luft": 1 } },
+      { "text": "klettern", "tags": { "erde": 1 } }
+    ]
+  },
+  {
+    "id": "temperatur",
+    "text": "Ziehst du Wärme oder Kälte vor?",
+    "cluster": "flavor",
+    "answers": [
+      { "text": "wärme", "tags": { "wärme": 1 , "feuer" : 1} },
+      { "text": "kälte", "tags": { "kälte": 1 } }
+    ]
+  },
+  {
+    "id": "regeln",
+    "text": "Was fühlt sich richtiger an: Alles folgt bestimmten Regeln; Manches ist nicht erklärbar; Es gibt höhere Mächte?",
+    "cluster": "gesellschaft",
+    "answers": [
+      { "text": "regeln", "tags": { "struktur": 1 } },
+      { "text": "nicht erklärbar", "tags": { "übernatürlich": 1 } },
+      { "text": "höhere Mächte", "tags": { "göttlich": 1 } }
+    ]
   }
-
+  
 ]
