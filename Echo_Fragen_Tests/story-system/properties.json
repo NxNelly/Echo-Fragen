@@ -1,0 +1,131 @@
+[
+  {
+    "name": "Aliens",
+    "tags": ["fauna", "übernatürlich", "zukunft"]
+  },
+  {
+    "name": "Apokalypse KI",
+    "tags": ["tech", "zukunft", "dystopisch"]
+  },
+  {
+    "name": "Apokalypse Natur",
+    "tags": ["natur", "zukunft", "dystopisch"]
+  },
+  {
+    "name": "Cyberpunk",
+    "tags": ["tech", "zukunft"]
+  },
+  {
+    "name": "Dinos",
+    "tags": ["natur", "fauna", "vergangenheit"]
+  },  
+  {
+    "name": "Griechische Götter-Welt",
+    "tags": ["vergangenheit", "göttlich", "luft"]
+  },
+  {
+    "name": "Götter",
+    "tags": ["göttlich"]
+  },
+  {
+    "name": "Klassisches Fantasy",
+    "tags": ["magie", "vergangenheit"]
+  },
+  {
+    "name": "Magitech",
+    "tags": ["magie", "tech"]
+  },
+  {
+    "name": "Moderne Welt mit magischen Elementen",
+    "tags": ["magie", "gegenwart"]
+  },
+  {
+    "name": "Magie wird neu erschaffen",
+    "tags": ["magie", "zukunft"]
+  },
+  {
+    "name": "Naturszene echt",
+    "tags": ["natur", "gegenwart", "echt"]
+  },
+  {
+    "name": "Naturszene fantastisch",
+    "tags": ["natur", "gegenwart", "fantastisch"]
+  },
+  {
+    "name": "Neue Technologie",
+    "tags": ["tech", "gegenwart", "innovation"]
+  },
+  {
+    "name": "Neue Gottheit",
+    "tags": ["göttlich", "zukunft"]
+  },
+  {
+    "name": "Raumfahrt realistisch",
+    "tags": ["tech", "echt", "luft", "futuristisch"]
+  },
+  {
+    "name": "Raumfahrt sci-fi",
+    "tags": ["tech", "luft", "futuristisch", "fantastisch"]
+  },
+  {
+    "name": "Rückkehr zur Natur",
+    "tags": ["natur", "zukunft", "tradition"]
+  },
+  {
+    "name": "Renaissance",
+    "tags": ["vergangenheit", "kunst"]
+  },
+  {
+    "name": "Retro Technologie",
+    "tags": ["tech", "vergangenheit", "echt"]
+  },
+  {
+    "name": "Stom basierte Mythen(Tesla ACE, Frankenstein)",
+    "tags": ["tech", "vergangenheit", "fantastisch"]
+  },
+  {
+    "name": "Steampunk",
+    "tags": ["tech", "vergangenheit", "fantastisch"]
+  },
+  {
+    "name": "Solarpunk",
+    "tags": ["tech", "vergangenheit", "optimismus"]
+  },
+  {
+    "name": "Schöne Natur Landschaft",
+    "tags": ["natur", "flora"]
+  },
+  {
+    "name": "Technologischer Luxus",
+    "tags": ["tech", "zukunft", "optimismus"]
+  },
+  {
+    "name": "Tiere",
+    "tags": ["fauna"]
+  },
+  {
+    "name": "Ursprung des Menschen echt",
+    "tags": ["natur", "vergangenheit", "echt"]
+  },
+  {
+    "name": "Ursprung des Menschen fantastisch",
+    "tags": ["natur", "vergangenheit", "fantastisch"]
+  },
+  {
+    "name": "Unterwasserwelt",
+    "tags": ["natur", "wasser"]
+  },
+  {
+    "name": "Vampir",
+    "tags": ["übernatürlich", "nacht"]
+  },
+  {
+    "name": "Piraten",
+    "tags": ["vergangenheit", "freiheit", "wasser"]
+  },
+  {
+    "name": "Western",
+    "tags": ["vergangenheit", "freiheit", "wild"]
+  }
+
+]

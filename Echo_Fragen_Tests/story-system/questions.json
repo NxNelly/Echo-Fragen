@@ -1,0 +1,125 @@
+[
+  {
+    "id": "kraft",
+    "text": "Was interessiert dich mehr: Technologie, Magie oder Natur??",
+    "cluster": "core",
+    "answers": [
+      { "text": "Natur", "tags": { "natur": 2 }, "followUpCluster": "natur" },
+      { "text": "Technologie", "tags": { "tech": 2 }, "followUpCluster": "tech" },
+      { "text": "Magie", "tags": { "magie": 2 }, "followUpCluster": "magie" }
+    ]
+  },
+  {
+    "id": "zeit",
+    "text": "Welche Zeitepoche fasziniert dich am meisten, vielleicht etwas Zukünftiges, die Gegenwart oder etwas Vergangenes?",
+    "cluster": "core",
+    "answers": [
+      { "text": "Vergangenheit", "tags": { "vergangenheit": 2 }, "followUpCluster": "vergangenheit" },
+      { "text": "Gegenwart", "tags": { "gegenwart": 2 }, "followUpCluster": "gegenwart" },
+      { "text": "Zukunft", "tags": { "zukunft": 2 },"followUpCluster": "zukunft" }
+    ]
+  },
+  {
+    "id": "realität",
+    "text": "Bist du gerne in der echten Welt oder wärst du lieber in einer Fantasiewelt?",
+    "cluster": "core",
+    "answers": [
+      { "text": "echt", "tags": { "echt": 1 } },
+      { "text": "fantastisch", "tags": { "fantastisch": 1 } }
+    ]
+  },
+  {
+    "id": "ort",
+    "text": "Bist du lieber in modernen Städten, Ruinen, oder unberührter Natur?",
+    "cluster": "aussehen",
+    "answers": [
+      { "text": "Städte", "tags": { "futuristisch": 1, "urban": 1 } },
+      { "text": "Ruinen", "tags": { "altertümlich": 1, "distopisch" :1} },
+      { "text": "unberührte Natur", "tags": {"wild" : 1 }}
+    ]
+  },
+  {
+    "id": "museum",
+    "text": "Wenn du ein Museum besuchst, Interessierts du dich eher für das Künstlerische oder das Historische?",
+    "cluster": "vergangenheit",
+    "answers": [
+      { "text": "künstlerisches", "tags": { "kunst": 1 } },
+      { "text": "historisch", "tags": { "geschichte": 1 } }
+    ]
+  },
+  {
+    "id": "natur1",
+    "text": "Was Interessiert ich mehr an der Natur, Flora oder Fauna?",
+    "cluster": "natur",
+    "answers": [
+      { "text": "flora", "tags": { "flora": 1 } },
+      { "text": "fauna", "tags": { "fauna": 1 } }
+    ]
+  },
+  {
+    "id": "natur2",
+    "text": "Fühlst du dich eher hingezogen zu Erde, Feuer, Wasser oder Luft?",
+    "cluster": "aussehen",
+    "answers": [
+      { "text": "erde", "tags": { "erde": 1 } },
+      { "text": "feuer", "tags": { "feuer": 1 } },
+      { "text": "wasser", "tags": { "wasser": 1 } },
+      { "text": "luft", "tags": { "luft": 1 } }
+    ]
+  },
+  {
+    "id": "gesellschaft",
+    "text": "Strebst du eher nach Freiheit oder Sicherheit?",
+    "cluster": "gesellschaft",
+    "answers": [
+      { "text": "Freiheit", "tags": { "freiheit": 1 } },
+      { "text": "Sicherheit", "tags": { "struktur": 1 } }
+    ]
+  },
+  {
+    "id": "tradition",
+    "text": "Lebst du eher von tradition oder innovation?",
+    "cluster": "gesellschaft",
+    "answers": [
+      { "text": "tradition", "tags": { "tradition": 1 } },
+      { "text": "innovation", "tags": { "innovation": 1 } }
+    ]
+  },
+  {
+    "id": "zuversicht",
+    "text": "Bist du eher ein optimistischer oder realistischer Mensch?",
+    "cluster": "zukunft",
+    "answers": [
+      { "text": "optimistisch", "tags": { "optimistisch": 1 } },
+      { "text": "realistisch", "tags": { "realistisch": 1 } }
+    ]
+  },
+  {
+    "id": "macht",
+    "text": "Wer gewinnt in deinen Augen, eine höhere Macht oder Helden?",
+    "cluster": "gesellschaft",
+    "answers": [
+      { "text": "höhere Macht", "tags": { "göttlich": 1 } },
+      { "text": "Helden", "tags": { "heroisch": 1 } }
+    ]
+  },
+  {
+    "id": "glaube",
+    "text": "Glaubst du an Übernatürliches?",
+    "cluster": "gesellschaft",
+    "answers": [
+      { "text": "Ja", "tags": { "göttlich": 1, "übernatürlich": 1 } },
+      { "text": "Nein", "tags": { "realistisch": 1 } }
+    ]
+  },
+  {
+    "id": "Nacht oder Tag",
+    "text": "Bevorzugst du die Nacht oder den Tag?",
+    "cluster": "aussehen",
+    "answers": [
+      { "text": "Nacht", "tags": { "nacht": 1 } },
+      { "text": "Tag", "tags": { "tag": 1 } }
+    ]
+  }
+
+]
