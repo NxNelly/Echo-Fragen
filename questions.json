@@ -1,0 +1,199 @@
+[
+  {
+    "id": "dominante kraft",
+    "text": "Was interessiert dich mehr: Technologie, Magie oder Natur??",
+    "cluster": "kernkonzept",
+    "priority": 10,
+    "answers": [
+      { "text": "Natur", "tags": { "natur": 2 }, "boostedQuestionId": "flora_fauna" },
+      { "text": "Technologie", "tags": { "tech": 2 }, "boostedQuestionId": "zuversicht" },
+      { "text": "Magie", "tags": { "magie": 2 }, "boostedQuestionId": "regeln" }
+    ]
+  },
+  {
+    "id": "zeit",
+    "text": "Welche Zeitepoche fasziniert dich am meisten, vielleicht etwas Zukünftiges, die Gegenwart oder etwas Vergangenes?",
+    "cluster": "zeit",
+    "priority": 10,
+    "answers": [
+      { "text": "Vergangenheit", "tags": { "vergangenheit": 2 }, "boostedQuestionId": "macht" },
+      { "text": "Gegenwart", "tags": { "gegenwart": 2 }, "boostedQuestionId": "realität" },
+      { "text": "Zukunft", "tags": { "zukunft": 2, "futuristisch": 1 },"boostedQuestionId": "zuversicht" }
+    ]
+  },
+  {
+    "id": "realität",
+    "text": "Bist du gerne in der echten Welt oder wärst du lieber in einer Fantasiewelt?",
+    "cluster": "realität",
+    "priority": 10,
+    "answers": [
+      { "text": "echt", "tags": { "echt": 1 } },
+      { "text": "fantasievoll", "tags": { "fantasievoll": 1 } }
+    ]
+  },
+  {
+    "id": "orte",
+    "text": "Bist du lieber in modernen Städten, Ruinen, oder unberührter Natur?",
+    "cluster": "zeit",
+    "priority": 5,
+    "answers": [
+      { "text": "Städte", "tags": { "futuristisch": 1, "urban": 1 } },
+      { "text": "Ruinen", "tags": { "altertümlich": 1, "dystopisch" :1} },
+      { "text": "unberührte Natur", "tags": {"wild" : 1 }}
+    ]
+  },
+  {
+    "id": "freiheit sicherheit",
+    "text": "Strebst du eher nach Freiheit oder Sicherheit?",
+    "cluster": "weltzustand",
+    "priority": 5,
+    "answers": [
+      { "text": "Freiheit", "tags": { "freiheit": 1 } },
+      { "text": "Sicherheit", "tags": { "struktur": 1 } }
+    ]
+  },
+  {
+    "id": "ordnung",
+    "text": "Würdest du lieber eingeschränkt in einer perfekt funktionierenden Welt leben oder in einer freien, aber chaotischen?",
+    "cluster": "weltzustand",
+    "priority": 5,
+    "answers": [
+      { "text": "Ordnung", "tags": { "struktur": 1 , "tradition": 1} },
+      { "text": "Chaos", "tags": { "chaos": 1, "dystopisch": 1, "veränderung": 1, "spannung": 1 } }
+    ]
+  },
+  {
+    "id": "tradition",
+    "text": "Lebst du eher von tradition oder innovation?",
+    "cluster": "kernkonzept",
+    "priority": 5,
+    "answers": [
+      { "text": "tradition", "tags": { "tradition": 1 } },
+      { "text": "innovation", "tags": { "innovation": 1 } }
+    ]
+  },
+  {
+    "id": "zuversicht",
+    "text": "Bist du eher ein optimistischer oder realistischer Mensch?",
+    "cluster": "kernkonzept",
+    "priority": 5,
+    "answers": [
+      { "text": "optimistisch", "tags": { "optimistisch": 1 } },
+      { "text": "realistisch", "tags": { "realistisch": 1, "dystopisch": 1 } }
+    ]
+  },
+  {
+    "id": "macht",
+    "text": "Wer gewinnt in deinen Augen, eine höhere Macht oder Helden?",
+    "cluster": "galuben_systeme",
+    "priority": 5,
+    "answers": [
+      { "text": "höhere Macht", "tags": { "göttlich": 1, "struktur" : 1, "macht": 1 }, "boostedQuestionId": "orte"},
+      { "text": "Helden", "tags": { "heroisch": 1 } }
+    ]
+  },
+  {
+    "id": "glaube",
+    "text": "Glaubst du an Übernatürliches?",
+    "cluster": "realität",
+    "priority": 5,
+    "answers": [
+      { "text": "Ja", "tags": { "übernatürlich": 1, "fantasievoll": 1 } },
+      { "text": "Nein", "tags": { "realistisch": 1, "echt": 1   } }
+    ]
+  },
+  {
+    "id": "regeln",
+    "text": "Was fühlt sich richtiger an: Alles folgt bestimmten Regeln; Manches ist nicht erklärbar; Es gibt höhere Mächte?",
+    "cluster": "galuben_systeme",
+    "priority": 5,
+    "answers": [
+      { "text": "regeln", "tags": { "struktur": 1 } },
+      { "text": "nicht erklärbar", "tags": { "übernatürlich": 1 } },
+      { "text": "höhere Mächte", "tags": { "göttlich": 1, "macht": 1 } }
+    ]
+  },
+  {"id": "introvertiert extrovertiert",
+    "text": "Brauchst du eher viel Austausch oder Zeit für dich alleine?",
+    "cluster": "gesellschaft",
+    "priority": 5,
+    "answers": [
+      { "text": "austausch", "tags": { "gesellschaft": 1, "extrovertiert": 1 } },
+      { "text": "alleine", "tags": { "unabhängigkeit":  1, "introvertiert": 1 } }
+    ]
+  },
+  {"id": "Personengruppen",
+  "priority": 5,
+    "text": "Willst du lieber Teil eines Größerem sein, oder komplett unabhängig?",
+    "cluster": "gesellschaft",
+    "answers": [
+      { "text": "Teil eines Größerem", "tags": { "gesellschaft": 1, "teamgeist": 1 } },
+      { "text": "unabhängig", "tags": { "unabhängigkeit":  1, "einzelgänger": 1 } }
+    ]
+  },
+  {
+    "id": "temperatur",
+    "text": "Ziehst du Wärme oder Kälte vor?",
+    "cluster": "umgebung",
+    "priority": 1,
+    "answers": [
+      { "text": "wärme", "tags": { "wärme": 1 , "feuer" : 1} },
+      { "text": "kälte", "tags": { "kälte": 1 } }
+    ]
+  },
+  {
+    "id": "flora_fauna",
+    "text": "Was Interessiert ich mehr an der Natur, Flora oder Fauna?",
+    "cluster": "umgebung",
+    "priority": 5,
+
+    "answers": [
+      { "text": "flora", "tags": { "flora": 1 } },
+      { "text": "fauna", "tags": { "fauna": 1 } }
+    ]
+  },
+  {
+    "id": "elemente",
+    "text": "Fühlst du dich eher hingezogen zu Erde, Feuer, Wasser oder Luft?",
+    "cluster": "umgebung",
+    "priority": 5,
+    "answers": [
+      { "text": "erde", "tags": { "erde": 1 } },
+      { "text": "feuer", "tags": { "feuer": 1 } },
+      { "text": "wasser", "tags": { "wasser": 1 } },
+      { "text": "luft", "tags": { "luft": 1 } }
+    ]
+  },
+  {
+    "id": "beschäftigung",
+    "text": "Wie beschäftigst du dich, durch Bewegung, Kreativität oder Wissen?",
+    "cluster": "ästetik",
+    "priority": 5,
+    "answers": [
+      { "text": "bewegung", "tags": { "sport": 1 } },
+      { "text": "kreatives", "tags": { "kunst": 1 } },
+      { "text": "wissen", "tags": { "geschichte": 1, "innovation": 1 } }
+    ]
+  },
+  {
+    "id": "nacht tag",
+    "text": "Bevorzugst du die Nacht oder den Tag?",
+    "cluster": "ästetik",
+    "priority": 1,
+    "answers": [
+      { "text": "Nacht", "tags": { "nacht": 1 } },
+      { "text": "Tag", "tags": { "tag": 1 } }
+    ]
+  },  
+  {
+    "id": "fortbewegung",
+    "text": "Würdest du lieber gut schwimmen, fliegen oder klettern können?",
+    "cluster": "ästetik",
+    "priority": 1,
+    "answers": [
+      { "text": "schwimmen", "tags": { "wasser": 1, "schwimmen": 1 } },
+      { "text": "fliegen", "tags": { "luft": 1, "fliegen": 1 } },
+      { "text": "klettern", "tags": { "erde": 1, "klettern": 1 } }
+    ]
+  }
+]

@@ -1,0 +1,326 @@
+[
+  {
+    "name": "Abgeschottet",
+    "optionalTags": [ "introvertiert", "einzelgänger", "unabhängigkeit"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Aliens",
+    "requiredTags": ["fauna", "übernatürlich"],
+    "optionalTags": [ "zukunft", "futuristisch", "tech"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Antike",
+    "requiredTags":["altertümlich", "vergangenheit"],
+    "optionalTags": ["heroisch", "göttlich", "geschichte", "tradition"],
+    "optionalRequired" : 4
+  },
+  {
+    "name": "Apokalypse KI",
+    "requiredTags": ["tech", "dystopisch"],
+    "optionalTags": ["zukunft","feuer", "chaos"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Apokalypse Natur",
+    "requiredTags": ["natur", "dystopisch"],  
+    "optionalTags": ["zukunft", "feuer", "chaos"],
+    "optionalRequired" : 2 
+  },
+  {
+    "name": "Anarchie",
+    "requiredTags": ["freiheit"],  
+    "optionalTags": ["chaos", "unabhängigkeit"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Barock",
+    "optionalTags": ["vergangenheit", "kunst", "tradition", "realistisch"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Cyberpunk",
+    "optionalTags": ["tech", "zukunft"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Dinos",
+    "optionalTags": ["natur", "fauna", "vergangenheit"],
+    "optionalRequired" : 3
+  },  
+  {
+    "name": "Eiswelt",
+    "requiredTags": ["kälte"],
+    "optionalTags": ["natur", "flora"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Feenwesen",
+    "optionalTags": ["magie", "natur", "luft", "übernatürlich"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Griechische Götter-Welt",
+    "optionalTags": ["vergangenheit", "göttlich", "luft"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Heldengeschichte",
+    "requiredTags": ["heroisch"],
+    "optionalTags": ["optimismus", "freiheit"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Hexen und Zauberer",
+    "optionalTags": ["magie", "macht", "altertümlich", "übernatürlich"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Klassisches Fantasy",
+    "optionalTags": ["magie", "vergangenheit"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Magitech",
+    "requiredTags": ["magie"],
+    "optionalTags": ["futuristisch", "zukunft", "tech", "innovation"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Magie wird neu erschaffen",
+    "optionalTags": ["magie", "zukunft"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Meerestiere",
+    "requiredTags": ["fauna", "wasser"],
+    "optionalTags": ["natur", "wärme"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Meerjungfrauen",
+    "requiredTags": ["fauna", "wasser", "fantasievoll"],
+    "optionalTags": ["natur", "wärme", "schwimmen"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Meeresungeheuer",
+    "requiredTags": ["fauna", "wasser", "übernatürlich"],
+    "optionalTags": ["wärme", "wild", "schwimmen"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Moderne Welt mit magischen Elementen",
+    "optionalTags": ["magie", "gegenwart"],
+    "optionalRequired" : 2  
+  },
+  {
+    "name": "Moderne Stadt",
+    "optionalTags": ["urban", "gegenwart"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Mutation",
+    "requiredTags": ["dystopisch", "chaos", "veränderung"],
+    "optionalTags":["natur", "fauna"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Naturszene fantasievoll",
+    "requiredTags": ["fantasievoll"],
+    "optionalTags": ["natur", "gegenwart", "erde"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Naturgeister",
+    "optionalTags": ["übernatürlich", "natur", "magie"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Naturgötter",
+    "requiredTags": ["göttlich", "natur"],
+    "optionalTags":["altertümlich","tradition"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Neue Technologie",
+    "optionalTags": ["tech", "gegenwart", "innovation"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Neue Gottheit",
+    "optionalTags": ["göttlich", "zukunft"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Raumfahrt",
+    "optionalTags": ["tech", "luft", "futuristisch"],
+    "optionalRequired" : 3  
+  },
+  {
+    "name": "Raumfahrt sci-fi",
+    "optionalTags": ["tech", "luft", "futuristisch", "fantasievoll"],
+    "optionalRequired" : 4
+  },
+  {
+    "name": "Ritter",
+    "requiredTags": ["vergangenheit", "heroisch"],
+    "optionalTags": ["geschichte", "tradition"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Rückkehr zur Natur",
+    "optionalTags": ["natur", "zukunft", "tradition"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Renaissance",
+    "optionalTags": ["vergangenheit", "kunst", "tradition", "optimismus"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Roboter",
+    "optionalTags": ["tech", "futuristisch", "zukunft", "innovation", "optimismus"],
+    "optionalRequired" : 4
+  },
+  {
+    "name": "Retro Technologie",
+    "optionalTags": ["tech", "vergangenheit", "echt"],
+    "optionalRequired" : 3  
+  },
+   {
+    "name": "Retro-Futurismus",
+    "optionalTags": ["tech", "futuristisch", "vergangenheit"],
+    "optionalRequired" : 3  
+  },
+  {
+    "name": "Stom basierte Mythen(Tesla ACE, Frankenstein)",
+    "optionalTags": ["tech", "vergangenheit", "fantasievoll"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Steampunk",
+    "optionalTags": ["tech", "vergangenheit", "fantasievoll", "feuer"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Steinzeit",
+    "requiredTags": ["vergangenheit"],
+    "optionalTags": ["natur", "erde", "wild"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Superhelden",
+    "requiredTags": ["heroisch"],
+    "optionalTags": ["futuristisch", "optimistisch", "fantasievoll"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Supernatural Thriller",
+    "requiredTags": ["übernatürlich"],
+    "optionalTags": ["nacht", "dystopisch", "spannung"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Surreale Traumwelt",
+    "requiredTags": ["fantasievoll", "chaos", "nacht"],
+    "optionalTags": ["übernatürlich", "veränderung", "dystopisch"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Solarpunk",
+    "optionalTags": ["tech", "zukunft", "optimismus", "struktur"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Schöne Natur Landschaft",
+    "optionalTags": ["natur", "flora", "erde"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Skaten",
+    "requiredTags": ["sport", "urban"],
+    "optionalTags": ["freiheit", "chaos" ],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Teamsport",
+    "requiredTags": ["sport"],
+    "optionalTags": ["teamgeist", "struktur", "gesellschaft"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Technologischer Luxus",
+    "optionalTags": ["tech", "zukunft", "optimismus", "struktur"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Technologische Neuheit fantasievoll",
+    "optionalTags": ["tech", "gegenwart", "fantasievoll"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Tiere",
+    "optionalTags": ["fauna", "natur"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Tropen",
+    "requiredTags":["wärme", "wasser"],
+    "optionalTags": [ "natur", "flora"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Ursprung des Menschen realistisch",
+    "optionalTags": ["natur", "vergangenheit", "echt"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Ursprung des Menschen ",
+    "optionalTags": ["natur", "vergangenheit"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Unterwasserwelt",
+    "optionalTags": ["natur", "wasser"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Vampir",
+    "optionalTags": ["übernatürlich", "nacht"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Piraten",
+    "optionalTags": ["vergangenheit", "freiheit", "wasser"],
+    "optionalRequired" : 3
+  },
+  {    
+    "name": "Postapokalypse",
+    "requiredTags": ["veränderung","dystopisch"],
+    "optionalTags": ["feuer",  "zukunft"],
+    "optionalRequired" : 1  
+  },
+  {
+    "name": "Western",
+    "optionalTags": ["vergangenheit", "freiheit", "wild", "wärme"],
+    "optionalRequired" : 3  
+  },
+  {
+    "name": "Werwölfe oder ähnliche tierische Monster",
+    "optionalTags": ["übernatürlich", "fauna", "wild", "nacht"],
+    "optionalRequired" : 3  
+  },
+  {
+    "name": "Wüste",
+    "requiredTags": ["wärme"],
+    "optionalTags": ["natur", "erde", "feuer"],
+    "optionalRequired" : 2
+  },
+  {
+    "name": "Zombies",
+    "optionalTags": ["übernatürlich", "vergangenheit", "dystopisch"],
+    "optionalRequired" : 3  
+  }
+]
