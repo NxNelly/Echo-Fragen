@@ -1,195 +1,256 @@
 let questions = [];
 let properties = [];
-
-let askedQuestions = [];
-let tagState = {};
-let boostedQuestionId = null;  // New: Tracks the question ID to boost next
-let askedClusters = new Set();  // New: Tracks asked clusters for coverage
+let avatars = [];
+let stories = [];
+let tagRequirements = null;
 
 let mode = "manual"; // "random" oder "manual"
 
-// --------------------
-// LOAD + NORMALIZE
-// --------------------
+const runtime = {
+  askedQuestions: [],
+  tagState: {
+    properties: {},
+    avatar: {},
+    story: {}
+  },
+  boostedQuestionId: null,
+  askedClusters: new Set()
+};
+
+const appContainer = document.getElementById("app");
+
 async function loadData() {
   questions = await (await fetch("questions.json")).json();
   properties = await (await fetch("properties.json")).json();
+  avatars = await (await fetch("avatar.json")).json();
+  stories = await (await fetch("story.json")).json();
+  tagRequirements = await (await fetch("tagRequirements.json")).json();
 
-  normalizeData(questions, properties);
-
+  normalizeData(questions, properties, avatars, stories);
+  resetRuntime();
   nextQuestion();
 }
-//random simulation run
-function runRandomSimulation() {
-  resetSimulation();
 
-  console.log("🚀 Starte 7er Durchlauf...\n");
-
-  for (let i = 0; i < 7; i++) {
-
-    let missingTags = checkProperties(properties, tagState);
-
-    let scored = questions.map(q => ({
-      q,
-      weight: getWeight(q, missingTags, askedQuestions, boostedQuestionId, askedClusters)
-    }));
-
-    let question = pickQuestion(scored);
-
-    let answer = question.answers[Math.floor(Math.random() * question.answers.length)];
-
-    console.log(`👉 Frage ${i + 1}:`, question.text);
-    console.log(`Antwort:`, answer.text);
-
-    applyTags(answer.tags, tagState);
-
-    askedQuestions.push(question.id);
-  }
-
-  console.log("\n📊 Finale Tags:", tagState);
-
-  showFinalResults();
+function getTotalQuestions() {
+  return tagRequirements?.totalQuestions ?? 10;
 }
 
-// Shared helper functions are now defined in helpers.js.
+function resetRuntime() {
+  runtime.askedQuestions = [];
+  runtime.tagState = {
+    properties: {},
+    avatar: {},
+    story: {}
+  };
+  runtime.boostedQuestionId = null;
+  runtime.askedClusters = new Set();
+}
 
-// --------------------
+function isFinished() {
+  return runtime.askedQuestions.length >= getTotalQuestions();
+}
 
-// --------------------
-// NEXT QUESTION
-// --------------------
 function nextQuestion() {
-  if (askedQuestions.length >= 8) {
-    showFinalResults();
+  if (isFinished()) {
+    renderFinalResults();
     return;
   }
 
-  let missingTags = checkProperties(properties, tagState);
+  const requiredTypes = getRequiredTagTypes(tagRequirements, runtime.tagState, runtime.askedQuestions.length);
+  const missingTags = collectMissingTags(properties, avatars, stories, runtime.tagState);
 
-  let scored = questions.map(q => ({
+  const scored = questions.map(q => ({
     q,
-    weight: getWeight(q, missingTags, askedQuestions, boostedQuestionId, askedClusters)
+    weight: getWeight(q, missingTags, runtime.askedQuestions, runtime.boostedQuestionId, runtime.askedClusters, requiredTypes)
   }));
 
-  let question = pickQuestion(scored);
-
-  console.log("\n👉 Frage:", question.text);
-  console.log("Gewichte:", scored);
+  const question = pickQuestion(scored);
+  if (!question) {
+    renderFinalResults();
+    return;
+  }
 
   if (mode === "random") {
     randomAnswer(question);
   } else {
-    showQuestionUI(question);
+    renderQuestion(question);
   }
 }
 
-// --------------------
-// ANSWER HANDLER
-// --------------------
-function handleAnswer(q, answer) {
-  applyTags(answer.tags, tagState);
-  boostedQuestionId = answer.boostedQuestionId;  // New: Set boosted question for next
-  askedClusters.add(q.cluster);  // New: Add cluster to asked clusters
+function handleAnswer(question, answer) {
+  applyTags(answer, runtime.tagState);
+  runtime.boostedQuestionId = answer.boostedQuestionId;
+  runtime.askedClusters.add(question.cluster);
+  runtime.askedQuestions.push(question.id);
 
-  askedQuestions.push(q.id);
+  console.log("Antwort verarbeitet. Aktuelle Tags:", runtime.tagState);
 
-  console.log("Aktuelle Tags:", tagState);
-
-  nextQuestion();
+  if (isFinished()) {
+    renderFinalResults();
+  } else {
+    nextQuestion();
+  }
 }
 
-// --------------------
-// RANDOM MODE
-// --------------------
-function randomAnswer(q) {
-  let answer = q.answers[Math.floor(Math.random() * q.answers.length)];
-
+function randomAnswer(question) {
+  const answer = question.answers[Math.floor(Math.random() * question.answers.length)];
   console.log("Antwort:", answer.text);
-
-  handleAnswer(q, answer);
+  handleAnswer(question, answer);
 }
 
-// --------------------
-// MANUAL MODE UI
-// --------------------
-function showQuestionUI(q) {
-  const container = document.getElementById("app");
+function renderQuestion(question) {
+  if (!appContainer) return;
 
-  container.innerHTML = `<h2>${q.text}</h2>`;
-
-  q.answers.forEach(ans => {
-    let btn = document.createElement("button");
-    btn.innerText = ans.text;
-
-    btn.onclick = () => handleAnswer(q, ans);
-
-    container.appendChild(btn);
+  appContainer.innerHTML = `<h2>${question.text}</h2><audio src="audio/${question.id}.mp3" autoplay></audio>`;
+  question.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.innerText = answer.text;
+    button.onclick = () => handleAnswer(question, answer);
+    appContainer.appendChild(button);
   });
 }
 
-// --------------------
-// MODE SWITCH
-// --------------------
 function toggleMode() {
-
   if (mode === "manual") {
     mode = "random";
     runRandomSimulation();
   } else {
     mode = "manual";
-    resetSimulation();
+    resetRuntime();
     nextQuestion();
   }
 
   console.log("Mode:", mode);
 }
 
-// --------------------
-// FINAL RESULTS
-// --------------------
-function showFinalResults() {
-  const container = document.getElementById("app");
+function runRandomSimulation() {
+  resetRuntime();
+  console.log(`🚀 Starte ${getTotalQuestions()}er Durchlauf...\n`);
 
-  container.innerHTML = "<h2>Ergebnis</h2>";
+  for (let i = 0; i < getTotalQuestions(); i++) {
+    const requiredTypes = getRequiredTagTypes(tagRequirements, runtime.tagState, runtime.askedQuestions.length);
+    const missingTags = collectMissingTags(properties, avatars, stories, runtime.tagState);
 
-  // TAGS (FIXED)
-  let tagHTML = "<h3>Tags</h3><ul>";
+    const scored = questions.map(q => ({
+      q,
+      weight: getWeight(q, missingTags, runtime.askedQuestions, runtime.boostedQuestionId, runtime.askedClusters, requiredTypes)
+    }));
 
-  Object.entries(tagState)
-    .sort((a, b) => b[1] - a[1])
-    .forEach(([tag, value]) => {
-      tagHTML += `<li>${tag}: ${value}</li>`;
-    });
+    const question = pickQuestion(scored);
+    if (!question) break;
 
-  tagHTML += "</ul>";
+    const answer = question.answers[Math.floor(Math.random() * question.answers.length)];
+    console.log(`👉 Frage ${i + 1}:`, question.text);
+    console.log(`Antwort:`, answer.text);
 
-  // PROPERTIES 
-  let achieved = getAchievedProperties(properties, tagState);
-  let almost = getAlmostProperties(properties, tagState);
-
-  let propHTML = "<h3>Eigenschaften</h3>";
-
-  propHTML += "<b>✅ Erreicht:</b><ul>";
-  achieved.forEach(p => propHTML += `<li>${p}</li>`);
-  propHTML += "</ul>";
-
-  if (almost.length > 0) {
-    propHTML += "<b>⚠️ Fast erreicht:</b><ul>";
-    almost.forEach(p => propHTML += `<li>${p}</li>`);
-    propHTML += "</ul>";
+    applyTags(answer, runtime.tagState);
+    runtime.boostedQuestionId = answer.boostedQuestionId;
+    runtime.askedClusters.add(question.cluster);
+    runtime.askedQuestions.push(question.id);
   }
 
-  container.innerHTML += tagHTML + propHTML;
+  renderFinalResults();
 }
 
-function resetSimulation() {
-  askedQuestions = [];
-  tagState = {};
-  boostedQuestionId = null;  
-  askedClusters.clear(); 
+function renderFinalResults() {
+  if (!appContainer) return;
+
+  const achievedProperties = getAchievedItems(properties, runtime.tagState.properties);
+  const achievedAvatars = getAchievedItems(avatars, runtime.tagState.avatar);
+  const achievedStories = getAchievedItems(stories, runtime.tagState.story);
+
+  const resultState = {
+    tags: {
+      properties: runtime.tagState.properties,
+      avatar: runtime.tagState.avatar,
+      story: runtime.tagState.story
+    },
+    properties: achievedProperties,
+    avatar: achievedAvatars,
+    story: achievedStories
+  };
+  console.log("Finales Ergebnis:", resultState);
+
+  let html = "<h2>Ergebnis</h2>";
+  html += buildTagSummary();
+  html += buildResultSection("Setting-Eigenschaften", properties, runtime.tagState.properties, "properties");
+  html += buildResultSection("Avatar-Eigenschaften", avatars, runtime.tagState.avatar, "avatar");
+  html += buildResultSection("Storypunkte", stories, runtime.tagState.story, "story");
+
+  appContainer.innerHTML = html;
 }
 
-// --------------------
-// START
-// --------------------
+function buildTagSummary() {
+  const groups = [
+    { title: "Setting-Tags", stateKey: "properties" },
+    { title: "Avatar-Tags", stateKey: "avatar" },
+    { title: "Story-Tags", stateKey: "story" }
+  ];
+
+  let html = "<h3>Tags</h3>";
+  groups.forEach(group => {
+    html += `<h4>${group.title}</h4><ul>`;
+    const entries = Object.entries(runtime.tagState[group.stateKey] || {}).sort((a, b) => b[1] - a[1]);
+    if (entries.length === 0) {
+      html += "<li>Keine Tags</li>";
+    } else {
+      entries.forEach(([tag, value]) => {
+        html += `<li>${tag}: ${value}</li>`;
+      });
+    }
+    html += "</ul>";
+  });
+
+  return html;
+}
+
+function getActForNumber(number) {
+  if (number <= 8) return 1;
+  if (number <= 15) return 2;
+  return 3;
+}
+
+function buildResultSection(title, items, state, category = "properties") {
+  const achieved = getAchievedItems(items, state, category);
+  let html = `<h3>${title}</h3>`;
+  html += "<b>✅ Erreicht:</b>";
+  if (achieved.length === 0) {
+    html += "<ul><li>Keine</li></ul>";
+  } else {
+    if (category === "story") {
+      // Stories nach Nummer sortieren und nach Akten organisieren
+      const achievedWithNumbers = achieved
+        .map(itemName => items.find(i => i.id === itemName || i.name === itemName))
+        .filter(item => item)
+        .sort((a, b) => (a.number || 0) - (b.number || 0));
+
+      // Nach Akten gruppieren
+      const byAct = { 1: [], 2: [], 3: [] };
+      achievedWithNumbers.forEach(item => {
+        const act = getActForNumber(item.number);
+        byAct[act].push(item);
+      });
+
+      html += "<div style='margin-left: 20px;'>";
+      [1, 2, 3].forEach(act => {
+        if (byAct[act].length > 0) {
+          html += `<h4>Akt ${act}</h4><ul style='list-style-type: none; padding-left: 0;'>`;
+          byAct[act].forEach(item => {
+            html += `<li style='margin-bottom: 10px;'><strong>${item.number}. ${item.name}</strong>: ${item.text}</li>`;
+          });
+          html += "</ul>";
+        }
+      });
+      html += "</div>";
+    } else {
+      html += "<ul>";
+      achieved.forEach(itemName => {
+        html += `<li>${itemName}</li>`;
+      });
+      html += "</ul>";
+    }
+  }
+  return html;
+}
+
 loadData();

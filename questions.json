@@ -1,199 +1,1212 @@
 [
   {
-    "id": "dominante kraft",
-    "text": "Was interessiert dich mehr: Technologie, Magie oder Natur??",
+    "id": "dominante_kraft",
+    "text": "Welche Quelle inspiriert dich, Magie, Natur oder Technologie?",
     "cluster": "kernkonzept",
-    "priority": 10,
+    "priority": 15,
     "answers": [
-      { "text": "Natur", "tags": { "natur": 2 }, "boostedQuestionId": "flora_fauna" },
-      { "text": "Technologie", "tags": { "tech": 2 }, "boostedQuestionId": "zuversicht" },
-      { "text": "Magie", "tags": { "magie": 2 }, "boostedQuestionId": "regeln" }
-    ]
+      {
+        "text": "Natur",
+        "boostedQuestionId": "flora_fauna",
+        "propertyTags": {
+          "natur": 2
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      },
+      {
+        "text": "Technologie",
+        "boostedQuestionId": "zuversicht",
+        "propertyTags": {
+          "tech": 2
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      },
+      {
+        "text": "Magie",
+        "boostedQuestionId": "regeln",
+        "propertyTags": {
+          "magie": 2
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      }
+    ],
+    "questionType": "properties"
   },
   {
     "id": "zeit",
-    "text": "Welche Zeitepoche fasziniert dich am meisten, vielleicht etwas Zukünftiges, die Gegenwart oder etwas Vergangenes?",
+    "text": "Fasziniert dich eher, was mal war, der jetzige Moment oder das, was noch kommt?",
     "cluster": "zeit",
-    "priority": 10,
+    "priority": 15,
     "answers": [
-      { "text": "Vergangenheit", "tags": { "vergangenheit": 2 }, "boostedQuestionId": "macht" },
-      { "text": "Gegenwart", "tags": { "gegenwart": 2 }, "boostedQuestionId": "realität" },
-      { "text": "Zukunft", "tags": { "zukunft": 2, "futuristisch": 1 },"boostedQuestionId": "zuversicht" }
-    ]
+      {
+        "text": "Was mal war",
+        "boostedQuestionId": "macht",
+        "propertyTags": {
+          "vergangenheit": 2
+        },
+        "avatarTags": {
+          "vergangenheit": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "jetzige Moment",
+        "boostedQuestionId": "realität",
+        "propertyTags": {
+          "gegenwart": 2
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      },
+      {
+        "text": "was noch kommt",
+        "boostedQuestionId": "zuversicht",
+        "propertyTags": {
+          "zukunft": 2,
+          "futuristisch": 1
+        },
+        "avatarTags": {
+          "lauernd": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": "properties"
   },
   {
     "id": "realität",
-    "text": "Bist du gerne in der echten Welt oder wärst du lieber in einer Fantasiewelt?",
+    "text": "Verlierst du dich lieber in Fantasiewelten oder bist du präsent im Hier und Jetzt?",
     "cluster": "realität",
-    "priority": 10,
+    "priority": 15,
     "answers": [
-      { "text": "echt", "tags": { "echt": 1 } },
-      { "text": "fantasievoll", "tags": { "fantasievoll": 1 } }
+      {
+        "text": "Fantasiewelt",
+        "propertyTags": {
+          "fantasievoll": 1
+        },
+        "avatarTags": {
+          "fantasievoll": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "Hier und Jetzt",
+        "propertyTags": {
+          "echt": 1
+        },
+        "avatarTags": {
+          "echt": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
     ]
   },
   {
     "id": "orte",
-    "text": "Bist du lieber in modernen Städten, Ruinen, oder unberührter Natur?",
+    "text": "Welche Orte rufen dich, moderne Städte, die ungezähmte Natur oder die Ruinen von früheren Zeiten?",
     "cluster": "zeit",
     "priority": 5,
     "answers": [
-      { "text": "Städte", "tags": { "futuristisch": 1, "urban": 1 } },
-      { "text": "Ruinen", "tags": { "altertümlich": 1, "dystopisch" :1} },
-      { "text": "unberührte Natur", "tags": {"wild" : 1 }}
+      {
+        "text": "Städte",
+        "propertyTags": {
+          "futuristisch": 1,
+          "urban": 1
+        },
+        "avatarTags": {
+          "haustier": 1,
+          "urban": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "ungezähmte Natur",
+        "propertyTags": {
+          "wild": 1
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      },
+      {
+        "text": "Ruinen",
+        "propertyTags": {
+          "altertümlich": 1,
+          "dystopisch": 1
+        },
+        "avatarTags": {
+          "vergangenheit": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
     ]
   },
   {
-    "id": "freiheit sicherheit",
-    "text": "Strebst du eher nach Freiheit oder Sicherheit?",
+    "id": "freiheit_sicherheit",
+    "text": "Was fühlt sich besser an, grenzenlose Möglichkeiten oder sichere Gewissheit??",
     "cluster": "weltzustand",
     "priority": 5,
     "answers": [
-      { "text": "Freiheit", "tags": { "freiheit": 1 } },
-      { "text": "Sicherheit", "tags": { "struktur": 1 } }
+      {
+        "text": "grenzenlose Möglichkeiten",
+        "propertyTags": {
+          "freiheit": 1
+        },
+        "avatarTags": {
+          "fliegen": 1
+        },
+        "storyTags": {
+          "narr": 1
+        }
+      },
+      {
+        "text": "sichere Gewissheit",
+        "propertyTags": {
+          "struktur": 1
+        },
+        "avatarTags": {},
+        "storyTags": {
+          "herrscher": 1
+        }
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
     ]
   },
   {
     "id": "ordnung",
-    "text": "Würdest du lieber eingeschränkt in einer perfekt funktionierenden Welt leben oder in einer freien, aber chaotischen?",
+    "text": "Würdest du lieber eingeschränkt in einer perfekten Welt leben oder in einer freien, aber chaotischen?",
     "cluster": "weltzustand",
     "priority": 5,
     "answers": [
-      { "text": "Ordnung", "tags": { "struktur": 1 , "tradition": 1} },
-      { "text": "Chaos", "tags": { "chaos": 1, "dystopisch": 1, "veränderung": 1, "spannung": 1 } }
-    ]
+      {
+        "text": "perfekte Welt",
+        "propertyTags": {
+          "struktur": 1,
+          "tradition": 1
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      },
+      {
+        "text": "chaotische Welt",
+        "propertyTags": {
+          "chaos": 1,
+          "dystopisch": 1,
+          "veränderung": 1,
+          "spannung": 1
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      }
+    ],
+    "questionType": "properties"
   },
   {
     "id": "tradition",
-    "text": "Lebst du eher von tradition oder innovation?",
+    "text": "Folgst du Pfaden, die schon existieren, oder schaffst du neue Wege?",
     "cluster": "kernkonzept",
     "priority": 5,
     "answers": [
-      { "text": "tradition", "tags": { "tradition": 1 } },
-      { "text": "innovation", "tags": { "innovation": 1 } }
-    ]
+      {
+        "text": "Pfaden folgen",
+        "propertyTags": {
+          "tradition": 1
+        },
+        "avatarTags": {},
+        "storyTags": {
+          "hierophant": 1
+        }
+      },
+      {
+        "text": "Wege schaffen",
+        "propertyTags": {
+          "innovation": 1
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      }
+    ],
+    "questionType": "properties"
   },
   {
     "id": "zuversicht",
-    "text": "Bist du eher ein optimistischer oder realistischer Mensch?",
+    "text": "Siehst du immer das Gute in der Welt, oder siehst du sie so, wie sie wirklich ist?",
     "cluster": "kernkonzept",
     "priority": 5,
     "answers": [
-      { "text": "optimistisch", "tags": { "optimistisch": 1 } },
-      { "text": "realistisch", "tags": { "realistisch": 1, "dystopisch": 1 } }
+      {
+        "text": "das Gute",
+        "propertyTags": {
+          "optimistisch": 1
+        },
+        "avatarTags": {},
+        "storyTags": {
+          "sonne": 1
+        }
+      },
+      {
+        "text": "Wirklichkeit",
+        "propertyTags": {
+          "realistisch": 1,
+          "dystopisch": 1
+        },
+        "avatarTags": {},
+        "storyTags": {
+          "mond": 1
+        }
+      }
+    ],
+    "questionType": [
+      "properties",
+      "story"
     ]
   },
   {
     "id": "macht",
-    "text": "Wer gewinnt in deinen Augen, eine höhere Macht oder Helden?",
+    "text": "Wer schreibt das Schicksal, eine Macht von oben oder die, die Mut haben zu handeln?",
     "cluster": "galuben_systeme",
     "priority": 5,
     "answers": [
-      { "text": "höhere Macht", "tags": { "göttlich": 1, "struktur" : 1, "macht": 1 }, "boostedQuestionId": "orte"},
-      { "text": "Helden", "tags": { "heroisch": 1 } }
+      {
+        "text": "höhere Macht",
+        "boostedQuestionId": "orte",
+        "propertyTags": {
+          "göttlich": 1,
+          "struktur": 1,
+          "macht": 1
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      },
+      {
+        "text": "Mutige",
+        "propertyTags": {
+          "heroisch": 1
+        },
+        "avatarTags": {
+          "abwehrend": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
     ]
   },
   {
     "id": "glaube",
-    "text": "Glaubst du an Übernatürliches?",
+    "text": "Glaubst du, dass mehr existiert als das, was wir mit Augen sehen?",
     "cluster": "realität",
     "priority": 5,
     "answers": [
-      { "text": "Ja", "tags": { "übernatürlich": 1, "fantasievoll": 1 } },
-      { "text": "Nein", "tags": { "realistisch": 1, "echt": 1   } }
+      {
+        "text": "Ja",
+        "propertyTags": {
+          "übernatürlich": 1,
+          "fantasievoll": 1
+        },
+        "avatarTags": {
+          "fantasievoll": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "Nein",
+        "propertyTags": {
+          "realistisch": 1,
+          "echt": 1
+        },
+        "avatarTags": {
+          "echt": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
     ]
   },
   {
     "id": "regeln",
-    "text": "Was fühlt sich richtiger an: Alles folgt bestimmten Regeln; Manches ist nicht erklärbar; Es gibt höhere Mächte?",
+    "text": "Besteht die Realität für dich aus festen Strukturen, wird sie von etwas Höherem gelenkt, oder ist manches einfach unerklärlich?",
     "cluster": "galuben_systeme",
     "priority": 5,
     "answers": [
-      { "text": "regeln", "tags": { "struktur": 1 } },
-      { "text": "nicht erklärbar", "tags": { "übernatürlich": 1 } },
-      { "text": "höhere Mächte", "tags": { "göttlich": 1, "macht": 1 } }
-    ]
+      {
+        "text": "feste Struckturen",
+        "propertyTags": {
+          "struktur": 1
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      },
+      {
+        "text": "Höheres lenkt",
+        "propertyTags": {
+          "göttlich": 1,
+          "macht": 1
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      },
+      {
+        "text": "manches ist unerklärlich",
+        "propertyTags": {
+          "übernatürlich": 1
+        },
+        "avatarTags": {
+          "fantasievoll": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": "properties"
   },
-  {"id": "introvertiert extrovertiert",
-    "text": "Brauchst du eher viel Austausch oder Zeit für dich alleine?",
+  {
+    "id": "sozial",
+    "text": "Teilst du deine Ideen gerne mit, oder behältst du sie lieber für dich?",
     "cluster": "gesellschaft",
     "priority": 5,
     "answers": [
-      { "text": "austausch", "tags": { "gesellschaft": 1, "extrovertiert": 1 } },
-      { "text": "alleine", "tags": { "unabhängigkeit":  1, "introvertiert": 1 } }
-    ]
+      {
+        "text": "mitteilen",
+        "propertyTags": {
+          "gesellschaft": 1,
+          "extrovertiert": 1
+        },
+        "avatarTags": {
+          "gesellig": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "für sich behalten",
+        "propertyTags": {
+          "unabhängigkeit": 1,
+          "introvertiert": 1
+        },
+        "avatarTags": {
+          "einzelgänger": 1,
+          "territorial": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": "properties"
   },
-  {"id": "Personengruppen",
-  "priority": 5,
-    "text": "Willst du lieber Teil eines Größerem sein, oder komplett unabhängig?",
+  {
+    "id": "gruppen",
+    "priority": 5,
+    "text": "Bist du gerne Teil eines großen Ganzen oder gehst du deinen eigenen Weg?",
     "cluster": "gesellschaft",
     "answers": [
-      { "text": "Teil eines Größerem", "tags": { "gesellschaft": 1, "teamgeist": 1 } },
-      { "text": "unabhängig", "tags": { "unabhängigkeit":  1, "einzelgänger": 1 } }
-    ]
+      {
+        "text": "Teil eines großen Ganzen",
+        "propertyTags": {
+          "gesellschaft": 1,
+          "teamgeist": 1
+        },
+        "avatarTags": {
+          "gesellig": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "eigenen Weg",
+        "propertyTags": {
+          "unabhängigkeit": 1,
+          "einzelgänger": 1
+        },
+        "avatarTags": {
+          "einzelgänger": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": "properties"
   },
   {
     "id": "temperatur",
-    "text": "Ziehst du Wärme oder Kälte vor?",
+    "text": "Suchst du nach Wärme oder Kälte?",
     "cluster": "umgebung",
     "priority": 1,
     "answers": [
-      { "text": "wärme", "tags": { "wärme": 1 , "feuer" : 1} },
-      { "text": "kälte", "tags": { "kälte": 1 } }
+      {
+        "text": "wärme",
+        "propertyTags": {
+          "wärme": 1,
+          "feuer": 1
+        },
+        "avatarTags": {
+          "warmesKlima": 1,
+          "warmeFarben": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "kälte",
+        "propertyTags": {
+          "kälte": 1
+        },
+        "avatarTags": {
+          "kaltesKlima": 1,
+          "kühleFarben": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
     ]
   },
   {
     "id": "flora_fauna",
-    "text": "Was Interessiert ich mehr an der Natur, Flora oder Fauna?",
+    "text": "Was an der Natur spricht zu dir, vielleicht Flora oder Fauna?",
     "cluster": "umgebung",
     "priority": 5,
-
     "answers": [
-      { "text": "flora", "tags": { "flora": 1 } },
-      { "text": "fauna", "tags": { "fauna": 1 } }
-    ]
+      {
+        "text": "flora",
+        "propertyTags": {
+          "flora": 1
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      },
+      {
+        "text": "fauna",
+        "propertyTags": {
+          "fauna": 1
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      }
+    ],
+    "questionType": "properties"
   },
   {
     "id": "elemente",
-    "text": "Fühlst du dich eher hingezogen zu Erde, Feuer, Wasser oder Luft?",
+    "text": "Zu welchem Element fühlst du dich hingezogen? Erde, Feuer, Wasser oder Luft?",
     "cluster": "umgebung",
     "priority": 5,
     "answers": [
-      { "text": "erde", "tags": { "erde": 1 } },
-      { "text": "feuer", "tags": { "feuer": 1 } },
-      { "text": "wasser", "tags": { "wasser": 1 } },
-      { "text": "luft", "tags": { "luft": 1 } }
+      {
+        "text": "erde",
+        "propertyTags": {
+          "erde": 1
+        },
+        "avatarTags": {
+          "erde": 1,
+          "kriechen": 1,
+          "laufen": 1,
+          "grün": 1,
+          "braun": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "feuer",
+        "propertyTags": {
+          "feuer": 1
+        },
+        "avatarTags": {
+          "feuer": 1,
+          "macht": 1,
+          "warmesKlima": 1,
+          "warmeFarben": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "wasser",
+        "propertyTags": {
+          "wasser": 1
+        },
+        "avatarTags": {
+          "wasser": 1,
+          "kühleFarben": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "luft",
+        "propertyTags": {
+          "luft": 1
+        },
+        "avatarTags": {
+          "luft": 1,
+          "fliegen": 1,
+          "helleFarben": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
     ]
   },
   {
     "id": "beschäftigung",
-    "text": "Wie beschäftigst du dich, durch Bewegung, Kreativität oder Wissen?",
+    "text": "Was treibt dich mehr an, Bewegung, Kreativität oder Wissen?",
     "cluster": "ästetik",
     "priority": 5,
     "answers": [
-      { "text": "bewegung", "tags": { "sport": 1 } },
-      { "text": "kreatives", "tags": { "kunst": 1 } },
-      { "text": "wissen", "tags": { "geschichte": 1, "innovation": 1 } }
+      {
+        "text": "bewegung",
+        "propertyTags": {
+          "sport": 1
+        },
+        "avatarTags": {
+          "schnell": 1,
+          "klettern": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "kreativität",
+        "propertyTags": {
+          "kunst": 1
+        },
+        "avatarTags": {
+          "neugierig": 1,
+          "tarnung": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "wissen",
+        "propertyTags": {
+          "geschichte": 1,
+          "innovation": 1
+        },
+        "avatarTags": {
+          "intelligent": 1,
+          "giftig": 1,
+          "lauernd": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": "properties"
+  },
+  {
+    "id": "nacht_tag",
+    "text": "Suchst du den Tag oder die Nacht?",
+    "cluster": "ästetik",
+    "priority": 1,
+    "answers": [
+      {
+        "text": "Nacht",
+        "propertyTags": {
+          "nacht": 1
+        },
+        "avatarTags": {
+          "nachtaktiv": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "Tag",
+        "propertyTags": {
+          "tag": 1
+        },
+        "avatarTags": {
+          "tagaktiv": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
     ]
   },
   {
-    "id": "nacht tag",
-    "text": "Bevorzugst du die Nacht oder den Tag?",
-    "cluster": "ästetik",
-    "priority": 1,
-    "answers": [
-      { "text": "Nacht", "tags": { "nacht": 1 } },
-      { "text": "Tag", "tags": { "tag": 1 } }
-    ]
-  },  
-  {
     "id": "fortbewegung",
-    "text": "Würdest du lieber gut schwimmen, fliegen oder klettern können?",
+    "text": "Ruf dich eher die Tiefe, die Höhe oder die Weite?",
     "cluster": "ästetik",
     "priority": 1,
     "answers": [
-      { "text": "schwimmen", "tags": { "wasser": 1, "schwimmen": 1 } },
-      { "text": "fliegen", "tags": { "luft": 1, "fliegen": 1 } },
-      { "text": "klettern", "tags": { "erde": 1, "klettern": 1 } }
+      {
+        "text": "Tiefe",
+        "propertyTags": {
+          "wasser": 1,
+          "schwimmen": 1
+        },
+        "avatarTags": {
+          "schwimmen": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "Höhe",
+        "propertyTags": {
+          "erde": 1,
+          "klettern": 1
+        },
+        "avatarTags": {
+          "klettern": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "Weite",
+        "propertyTags": {
+          "luft": 1,
+          "fliegen": 1
+        },
+        "avatarTags": {
+          "fliegen": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
+    ]
+  },
+  {
+    "id": "größe",
+    "text": "Findest du Bedeutung in den kleinen Dingen, oder in der überwältigenden Größe?",
+    "cluster": "tierisch",
+    "priority": 5,
+    "answers": [
+      {
+        "text": "kleine Dinge",
+        "propertyTags": {
+          "optimistisch": 1
+        },
+        "avatarTags": {
+          "klein": 1
+        },
+        "storyTags": {
+          "magier": 1
+        }
+      },
+      {
+        "text": "Größe",
+        "propertyTags": {
+          "macht": 1
+        },
+        "avatarTags": {
+          "groß": 1
+        },
+        "storyTags": {
+          "teufel": 1
+        }
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar",
+      "story"
+    ]
+  },
+  {
+    "id": "konfrontation",
+    "text": "Bist du in Konflikten ausgeglichen, oder brauchst du Konfrontation??",
+    "cluster": "tierisch",
+    "priority": 5,
+    "answers": [
+      {
+        "text": "ausgeglichen",
+        "propertyTags": {
+          "ruhe": 1
+        },
+        "avatarTags": {
+          "pflanzenfresser": 1,
+          "friedlich": 1,
+          "scheu": 1
+        },
+        "storyTags": {
+          "eremit": 1
+        }
+      },
+      {
+        "text": "Konfrontation",
+        "propertyTags": {
+          "chaos": 1,
+          "spannung": 1,
+          "innovation": 1,
+          "macht": 1
+        },
+        "avatarTags": {
+          "raubtier": 1,
+          "abwehrend": 1,
+          "giftig": 1,
+          "aggressiv": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar",
+      "story"
+    ]
+  },
+  {
+    "id": "tempo",
+    "text": "Gehst du eher bedacht oder schnell durchs Leben?",
+    "cluster": "tierisch",
+    "priority": 5,
+    "answers": [
+      {
+        "text": "bedacht",
+        "propertyTags": {
+          "ruhe": 1
+        },
+        "avatarTags": {
+          "leise": 1,
+          "langsam": 1,
+          "lauernd": 1
+        },
+        "storyTags": {
+          "mäßigkeit": 1
+        }
+      },
+      {
+        "text": "schnell",
+        "propertyTags": {
+          "chaos": 1,
+          "wild": 1
+        },
+        "avatarTags": {
+          "schnell": 1,
+          "jäger": 1
+        },
+        "storyTags": {
+          "narr": 1
+        }
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
+    ]
+  },
+  {
+    "id": "laute",
+    "text": "Wie drückst du dich eher aus: sanft, kontrolliert oder einschüchternd?",
+    "cluster": "tierisch",
+    "priority": 5,
+    "answers": [
+      {
+        "text": "sanft",
+        "propertyTags": {
+          "ruhe": 1
+        },
+        "avatarTags": {
+          "leise": 1,
+          "fell": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "kontrolliert",
+        "propertyTags": {
+          "struktur": 1
+        },
+        "avatarTags": {
+          "intelligent": 1,
+          "giftig": 1
+        },
+        "storyTags": {}
+      },
+      {
+        "text": "einschüchternd ",
+        "propertyTags": {
+          "macht": 1
+        },
+        "avatarTags": {
+          "macht": 1,
+          "raubtier": 1,
+          "laut": 1,
+          "abwehrend": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar"
+    ]
+  },
+  {
+    "id": "Intuition",
+    "priority": 1,
+    "text": "Leitet dich deine inneren Stimme, oder entscheidest du dich bedacht?",
+    "cluster": "",
+    "answers": [
+      {
+        "text": "Innere Stimme",
+        "propertyTags": {
+          "ruhe": 1
+        },
+        "avatarTags": {
+          "leise": 1,
+          "lauernd": 1
+        },
+        "storyTags": {
+          "hohenpriesterin": 1
+        }
+      },
+      {
+        "text": "bedacht",
+        "propertyTags": {
+          "struktur": 1,
+          "gerechtigkeit": 1
+        },
+        "avatarTags": {
+          "intelligent": 1
+        },
+        "storyTags": {
+          "gerechtigkeit": 1
+        }
+      }
+    ],
+    "questionType": "properties"
+  },
+  {
+    "id": "Ego",
+    "priority": 1,
+    "text": "Sorgst du eher um andere, oder um diene eigenen Ziele?",
+    "cluster": "gesellschaft",
+    "answers": [
+      {
+        "text": "Andere",
+        "propertyTags": {
+          "gesellschaft": 1,
+          "teamgeist": 1,
+          "selbstlosigkeit": 1
+        },
+        "avatarTags": {
+          "gesellig": 1
+        },
+        "storyTags": {
+          "herrscherin": 1
+        }
+      },
+      {
+        "text": "Eigenes",
+        "propertyTags": {
+          "einzelgänger": 1,
+          "egoismus": 1
+        },
+        "avatarTags": {
+          "einzelgänger": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": "properties"
+  },
+  {
+    "id": "ordnung_2",
+    "priority": 1,
+    "text": "Lässt du Dinge einfach auf dich zukommen, oder brasuchst du Kontrolle?",
+    "cluster": "weltzustand",
+    "answers": [
+      {
+        "text": "zukommen lassen",
+        "propertyTags": {
+          "ruhe": 1,
+          "veränderung": 1
+        },
+        "avatarTags": {
+          "langsam": 1,
+          "friedlich": 1
+        },
+        "storyTags": {
+          "radDesSchicksals": 1
+        }
+      },
+      {
+        "text": "kontrolle",
+        "propertyTags": {
+          "struktur": 1,
+          "macht": 1
+        },
+        "avatarTags": {
+          "einzelgänger": 1
+        },
+        "storyTags": {
+          "herrscher": 1
+        }
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar",
+      "story"
+    ]
+  },
+  {
+    "id": "liebenden",
+    "priority": 1,
+    "text": "Weist du was du willst oder lässt du dich von äußeren Einflussen verunsichern?",
+    "cluster": "weltzustand",
+    "answers": [
+      {
+        "text": "weis was ich will",
+        "propertyTags": {
+          "selbstbewusst": 1
+        },
+        "avatarTags": {
+          "selbstbewusst": 1
+        },
+        "storyTags": {
+          "liebenden": 1
+        }
+      },
+      {
+        "text": "beeinflussen lassen",
+        "propertyTags": {},
+        "avatarTags": {
+          "scheu": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar",
+      "story"
+    ]
+  },
+  {
+    "id": "festhalten",
+    "priority": 1,
+    "text": "Hälst du gerne fest, oder lässt du lieber los?",
+    "cluster": "weltzustand",
+    "answers": [
+      {
+        "text": "festhalten",
+        "propertyTags": {
+          "struktur": 1
+        },
+        "avatarTags": {
+          "territorial": 1
+        },
+        "storyTags": {
+          "wagen": 1
+        }
+      },
+      {
+        "text": "loslassen",
+        "propertyTags": {
+          "freiheit": 1,
+          "unabhängigkeit": 1
+        },
+        "avatarTags": {
+          "scheu": 1
+        },
+        "storyTags": {
+          "gehängter": 1
+        }
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar",
+      "story"
+    ]
+  },
+  {
+    "id": "Stärke",
+    "priority": 1,
+    "text": "Kommt deine Stärke von innen oder außen?",
+    "cluster": "weltzustand",
+    "answers": [
+      {
+        "text": "innen",
+        "propertyTags": {
+          "selbstbewusst": 1,
+          "heroisch": 1
+        },
+        "avatarTags": {
+          "selbstbewusst": 1
+        },
+        "storyTags": {
+          "kraft": 1
+        }
+      },
+      {
+        "text": "außen",
+        "propertyTags": {
+          "macht": 1,
+          "sport": 1
+        },
+        "avatarTags": {
+          "raubtier": 1,
+          "schnell": 1,
+          "jäger": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar",
+      "story"
+    ]
+  },
+  {
+    "id": "Neuanfang",
+    "priority": 1,
+    "text": "Wenn du ohne, dass dir etwas im Weg steht von vorne Anfangen könntest, würdest du des tun?",
+    "cluster": "weltzustand",
+    "answers": [
+      {
+        "text": "Ja",
+        "propertyTags": {
+          "einzelgänger": 1,
+          "freiheit": 1,
+          "veränderung": 1
+        },
+        "avatarTags": {
+          "kurzlebig": 1
+        },
+        "storyTags": {
+          "tod": 1
+        }
+      },
+      {
+        "text": "Nein",
+        "propertyTags": {
+          "optimistisch": 1
+        },
+        "avatarTags": {
+          "langlebig": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar",
+      "story"
+    ]
+  },
+  {
+    "id": "Wahrheit",
+    "priority": 1,
+    "text": "Strebst du immer nach der Wahrheit, auch wenn sie schwer ist, oder akzeptierst du komfortable Täuschungen",
+    "cluster": "weltzustand",
+    "answers": [
+      {
+        "text": "Wahrheit",
+        "propertyTags": {
+          "selbstlosigkeit": 1
+        },
+        "avatarTags": {
+          "intelligent": 1
+        },
+        "storyTags": {
+          "turm": 1
+        }
+      },
+      {
+        "text": "Täuschung",
+        "propertyTags": {
+          "tradition": 1
+        },
+        "avatarTags": {
+          "tarnung": 1
+        },
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar",
+      "story"
+    ]
+  },
+  {
+    "id": "Hoffnung",
+    "priority": 1,
+    "text": "Hälst du an bekannten Dingen fest, oder hast du Hoffnung auf Besseres?",
+    "cluster": "weltzustand",
+    "answers": [
+      {
+        "text": "festhalten",
+        "propertyTags": {
+          "struktur": 1,
+          "tradition": 1
+        },
+        "avatarTags": {},
+        "storyTags": {
+          "kraft": 1
+        }
+      },
+      {
+        "text": "Hoffnung",
+        "propertyTags": {
+          "optimistisch": 1
+        },
+        "avatarTags": {
+          "friedlich": 1
+        },
+        "storyTags": {
+          "stern": 1
+        }
+      }
+    ],
+    "questionType": [
+      "properties",
+      "avatar",
+      "story"
+    ]
+  },
+  {
+    "id": "gericht",
+    "priority": 1,
+    "text": "Hälst du dich an Prinzipien, oder biegst du Regeln wenn es dir dient",
+    "cluster": "weltzustand",
+    "answers": [
+      {
+        "text": "Prinzipien",
+        "propertyTags": {
+          "struktur": 1,
+          "gerechtigkeit": 1
+        },
+        "avatarTags": {},
+        "storyTags": {
+          "gericht": 1
+        }
+      },
+      {
+        "text": "Regenl biegen",
+        "propertyTags": {
+          "unabhängigkeit": 1,
+          "egoismus": 1
+        },
+        "avatarTags": {},
+        "storyTags": {}
+      }
+    ],
+    "questionType": [
+      "properties",
+      "story"
     ]
   }
 ]

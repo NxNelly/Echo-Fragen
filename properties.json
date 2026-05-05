@@ -31,13 +31,14 @@
   {
     "name": "Anarchie",
     "requiredTags": ["freiheit"],  
-    "optionalTags": ["chaos", "unabhängigkeit"],
-    "optionalRequired" : 1
+    "optionalTags": ["chaos", "unabhängigkeit", "dystopisch", "veränderung"],
+    "optionalRequired" : 2
   },
   {
     "name": "Barock",
-    "optionalTags": ["vergangenheit", "kunst", "tradition", "realistisch"],
-    "optionalRequired" : 3
+    "requiredTags": ["vergangenheit", "echt"],
+    "optionalTags": ["tradition", "realistisch", "kunst"],
+    "optionalRequired" : 2
   },
   {
     "name": "Cyberpunk",
@@ -46,17 +47,18 @@
   },
   {
     "name": "Dinos",
-    "optionalTags": ["natur", "fauna", "vergangenheit"],
+    "optionalTags": ["natur", "fauna", "vergangenheit", "echt"],
     "optionalRequired" : 3
   },  
   {
-    "name": "Eiswelt",
+    "name": "kaltes Klima / Eiszeit ",
     "requiredTags": ["kälte"],
     "optionalTags": ["natur", "flora"],
     "optionalRequired" : 1
   },
   {
     "name": "Feenwesen",
+    "requiredTags": ["fantasievoll"],
     "optionalTags": ["magie", "natur", "luft", "übernatürlich"],
     "optionalRequired" : 3
   },
@@ -73,12 +75,19 @@
   },
   {
     "name": "Hexen und Zauberer",
+    "requiredTags": ["fantasievoll"],
     "optionalTags": ["magie", "macht", "altertümlich", "übernatürlich"],
     "optionalRequired" : 3
   },
   {
     "name": "Klassisches Fantasy",
-    "optionalTags": ["magie", "vergangenheit"],
+    "optionalTags": ["magie", "vergangenheit", "fantasievoll"],
+    "optionalRequired" : 3
+  },
+  {
+    "name": "Klettern",
+    "requiredTags": ["klettern"],  
+    "optionalTags": ["sport", "echt", "natur"],
     "optionalRequired" : 2
   },
   {
@@ -154,6 +163,11 @@
     "optionalRequired" : 2
   },
   {
+    "name": "Outdoor Sport (Wandern...)",
+    "optionalTags": ["natur", "sport"],
+    "optionalRequired" : 2
+  },
+  {
     "name": "Raumfahrt",
     "optionalTags": ["tech", "luft", "futuristisch"],
     "optionalRequired" : 3  
@@ -166,7 +180,7 @@
   {
     "name": "Ritter",
     "requiredTags": ["vergangenheit", "heroisch"],
-    "optionalTags": ["geschichte", "tradition"],
+    "optionalTags": ["geschichte", "tradition", "echt"],
     "optionalRequired" : 1
   },
   {
@@ -176,8 +190,9 @@
   },
   {
     "name": "Renaissance",
-    "optionalTags": ["vergangenheit", "kunst", "tradition", "optimismus"],
-    "optionalRequired" : 3
+    "requiredTags": ["vergangenheit", "kunst"],
+    "optionalTags": ["tradition", "optimismus", "echt"],
+    "optionalRequired" : 2
   },
   {
     "name": "Roboter",
@@ -207,8 +222,13 @@
   {
     "name": "Steinzeit",
     "requiredTags": ["vergangenheit"],
-    "optionalTags": ["natur", "erde", "wild"],
+    "optionalTags": ["natur", "erde", "wild", "echt"],
     "optionalRequired" : 2
+  },
+  {
+    "name": "Strand",
+    "optionalTags": ["natur", "wasser", "wärme"],
+    "optionalRequired" : 3
   },
   {
     "name": "Superhelden",
@@ -219,8 +239,8 @@
   {
     "name": "Supernatural Thriller",
     "requiredTags": ["übernatürlich"],
-    "optionalTags": ["nacht", "dystopisch", "spannung"],
-    "optionalRequired" : 2
+    "optionalTags": ["nacht", "dystopisch", "spannung", "chaos"],
+    "optionalRequired" : 3
   },
   {
     "name": "Surreale Traumwelt",
@@ -241,13 +261,19 @@
   {
     "name": "Skaten",
     "requiredTags": ["sport", "urban"],
-    "optionalTags": ["freiheit", "chaos" ],
+    "optionalTags": ["freiheit", "chaos", "echt", "gegenwart"],
+    "optionalRequired" : 1
+  },
+  {
+    "name": "Surfen",
+    "requiredTags": ["sport", "wasser"],  
+    "optionalTags": ["natur", "freiheit", "echt", "gegenwart"],
     "optionalRequired" : 1
   },
   {
     "name": "Teamsport",
     "requiredTags": ["sport"],
-    "optionalTags": ["teamgeist", "struktur", "gesellschaft"],
+    "optionalTags": ["teamgeist", "struktur", "gesellschaft", "gegenwart"],
     "optionalRequired" : 2
   },
   {
@@ -282,14 +308,14 @@
     "optionalRequired" : 2
   },
   {
-    "name": "Unterwasserwelt",
+    "name": "Unterwasser/See/Ozean...",
     "optionalTags": ["natur", "wasser"],
     "optionalRequired" : 2
   },
   {
     "name": "Vampir",
-    "optionalTags": ["übernatürlich", "nacht"],
-    "optionalRequired" : 2
+    "optionalTags": ["übernatürlich", "nacht", "macht"],
+    "optionalRequired" : 3
   },
   {
     "name": "Piraten",
@@ -308,7 +334,7 @@
     "optionalRequired" : 3  
   },
   {
-    "name": "Werwölfe oder ähnliche tierische Monster",
+    "name": "Werwölfe",
     "optionalTags": ["übernatürlich", "fauna", "wild", "nacht"],
     "optionalRequired" : 3  
   },
@@ -320,7 +346,7 @@
   },
   {
     "name": "Zombies",
-    "optionalTags": ["übernatürlich", "vergangenheit", "dystopisch"],
-    "optionalRequired" : 3  
+    "optionalTags": ["übernatürlich", "vergangenheit", "dystopisch", "fantasievoll"],
+    "optionalRequired" : 4  
   }
 ]

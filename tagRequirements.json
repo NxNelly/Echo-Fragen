@@ -1,0 +1,9 @@
+{
+  "checkAfter": 5,
+  "totalQuestions": 8,
+  "minimums": {
+    "properties": 10,
+    "avatar": 3,
+    "story": 0
+  }
+}

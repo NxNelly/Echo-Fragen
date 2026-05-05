@@ -1,0 +1,471 @@
+[
+  {
+    "name": "Affe",
+    "requiredTags": [
+      "klettern",
+      "intelligent"
+    ],
+    "optionalTags": [
+      "fell",
+      "warmesKlima",
+      "gesellig",
+      "pflanzenfresser"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Aligator/Krokodil",
+    "requiredTags": [
+      "wasser",
+      "raubtier"
+    ],
+    "optionalTags": [
+      "lauernd",
+      "grün",
+      "groß",
+      "kriechen",
+      "schwimmen"
+    ],
+    "optionalRequired": 3
+  },
+  {
+    "name": "All Tags",
+    "optionalTags": [
+      "abwehrend",
+      "aggressiv",
+      "beutetier",
+      "braun",
+      "echt",
+      "einzelgänger",
+      "erde",
+      "feuer",
+      "fantasievoll",
+      "fliegen",
+      "fell",
+      "friedlich",
+      "gesellig",
+      "giftig",
+      "groß",
+      "grün",
+      "haustier",
+      "intelligent",
+      "jäger",
+      "kaltesKlima ",
+      "klein",
+      "klettern",
+      "kriechen",
+      "kurzlebig",
+      "kühleFarben",
+      "langsam",
+      "laufen",
+      "laut",
+      "lauernd",
+      "langlebig",
+      "leise",
+      "luft",
+      "macht",
+      "nachtaktiv",
+      "neugierig",
+      "pflanzenfresser",
+      "raubtier",
+      "scheu",
+      "schnell",
+      "schwimmen",
+      "selbstbewusst",
+      "tagaktiv",
+      "tarnung",
+      "territorial",
+      "urban",
+      "vergangenheit",
+      "warmesKlima",
+      "warmeFarben",
+      "wasser"
+    ],
+    "optionalRequired": 30
+  },
+  {
+    "name": "Amphib",
+    "optionalTags": [
+      "wasser",
+      "giftig",
+      "klein"
+    ],
+    "optionalRequired": 3
+  },
+  {
+    "name": "Bär",
+    "requiredTags": [
+      "fell",
+      "raubtier",
+      "aggressiv"
+    ],
+    "optionalTags": [
+      "groß",
+      "erde",
+      "laut",
+      "abwehrend"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Dinosaurier",
+    "requiredTags": [
+      "vergangenheit",
+      "groß"
+    ],
+    "optionalTags": [
+      "langsam",
+      "abwehrend"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Drachen",
+    "requiredTags": [
+      "fantasievoll"
+    ],
+    "optionalTags": [
+      "feuer",
+      "fliegen",
+      "luft"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Echse",
+    "requiredTags": [
+      "kriechen"
+    ],
+    "optionalTags": [
+      "klein",
+      "warmesKlima",
+      "erde"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Elefant",
+    "requiredTags": [
+      "intelligent",
+      "groß"
+    ],
+    "optionalTags": [
+      "gesellig",
+      "erde",
+      "warmesKlima",
+      "pflanzenfresser"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Eule",
+    "requiredTags": [
+      "nachtaktiv",
+      "fliegen",
+      "intelligent"
+    ],
+    "optionalTags": [
+      "luft",
+      "beutetier",
+      "klein"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Faultier",
+    "requiredTags": [
+      "langsam",
+      "friedlich"
+    ],
+    "optionalTags": [
+      "fell",
+      "pflanzenfresser",
+      "einzelgänger"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Fisch",
+    "requiredTags": [
+      "wasser",
+      "schwimmen"
+    ],
+    "optionalTags": [
+      "kühleFarben",
+      "kaltesKlima"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Flugtier",
+    "optionalTags": [
+      "luft",
+      "fliegen"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Fluigsaurier",
+    "requiredTags": [
+      "vergangenheit",
+      "fliegen"
+    ],
+    "optionalTags": [
+      "groß",
+      "raubtier"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Fuchs",
+    "requiredTags": [
+      "klein",
+      "intelligent"
+    ],
+    "optionalTags": [
+      "fell",
+      "raubtier",
+      "nachtaktiv"
+    ],
+    "optionalRequired": 3
+  },
+  {
+    "name": "Hornträger",
+    "requiredTags": [
+      "abwehrend",
+      "aggressiv"
+    ],
+    "optionalTags": [
+      "territorial",
+      "pflanzenfresser",
+      "groß"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Hund",
+    "requiredTags": [
+      "gesellig",
+      "haustier"
+    ],
+    "optionalTags": [
+      "fell",
+      "raubtier",
+      "laut"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Igel",
+    "requiredTags": [
+      "abwehrend",
+      "klein"
+    ],
+    "optionalTags": [
+      "erde",
+      "kriechen",
+      "nachtaktiv"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Insekt",
+    "requiredTags": [
+      "klein"
+    ],
+    "optionalTags": [
+      "fliegen",
+      "luft",
+      "leise",
+      "urban"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Kanninchen/Hase",
+    "requiredTags": [
+      "schnell",
+      "klein"
+    ],
+    "optionalTags": [
+      "fell",
+      "pflanzenfresser",
+      "beutetier"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Katze",
+    "optionalTags": [
+      "haustier",
+      "fell",
+      "raubtier",
+      "nachtaktiv",
+      "klein"
+    ],
+    "optionalRequired": 3
+  },
+  {
+    "name": "Maus/Ratte",
+    "requiredTags": [
+      "klein",
+      "pflanzenfresser",
+      "scheu"
+    ],
+    "optionalTags": [
+      "beutetier",
+      "nachtaktiv",
+      "gesellig",
+      "urban"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Pferd",
+    "requiredTags": [
+      "schnell",
+      "groß"
+    ],
+    "optionalTags": [
+      "haustier",
+      "pflanzenfresser",
+      "gesellig"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Phönix",
+    "requiredTags": [
+      "feuer"
+    ],
+    "optionalTags": [
+      "fliegen",
+      "luft"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Pinguin",
+    "requiredTags": [
+      "schwimmen",
+      "gesellig"
+    ],
+    "optionalTags": [
+      "fliegen",
+      "kaltesKlima"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Polartier",
+    "requiredTags": [
+      "kaltesKlima"
+    ],
+    "optionalTags": [
+      "fell",
+      "tarnung"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Raubkatze",
+    "requiredTags": [
+      "raubtier"
+    ],
+    "optionalTags": [
+      "laut",
+      "fell",
+      "warmesKlima"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Schildkröte",
+    "requiredTags": [
+      "klein",
+      "langsam",
+      "wasser",
+      "abwehrend"
+    ],
+    "optionalTags": [
+      "schwimmen",
+      "warmesKlima"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Schlange",
+    "requiredTags": [
+      "giftig",
+      "kriechen"
+    ],
+    "optionalTags": [
+      "kälte",
+      "erde",
+      "nachtaktiv"
+    ],
+    "optionalRequired": 1
+  },
+  {
+    "name": "Spinne",
+    "requiredTags": [
+      "klein",
+      "klettern",
+      "lauernd"
+    ],
+    "optionalTags": [
+      "giftig",
+      "leise",
+      "nachtaktiv"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Vogel",
+    "requiredTags": [
+      "fliegen"
+    ],
+    "optionalTags": [
+      "luft",
+      "beutetier",
+      "klein",
+      "scheu"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Waschbär",
+    "requiredTags": [
+      "nachtaktiv",
+      "urban"
+    ],
+    "optionalTags": [
+      "fell",
+      "klein",
+      "gesellig"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Wasservogel",
+    "optionalTags": [
+      "wasser",
+      "fliegen"
+    ],
+    "optionalRequired": 2
+  },
+  {
+    "name": "Wolf",
+    "requiredTags": [
+      "gesellig",
+      "raubtier"
+    ],
+    "optionalTags": [
+      "nachtaktiv",
+      "erde",
+      "laut",
+      "abwehrend"
+    ],
+    "optionalRequired": 2
+  }
+]

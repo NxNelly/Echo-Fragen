@@ -4,12 +4,13 @@
 async function runSimulation() {
   console.log("🚀 Starte Simulation...");
 
-  let runs = 10000;
+  let runs = 1000;
 
   let stats = {
     questions: {},
     tags: {},
-    properties: {}
+    properties: {},
+    avatars: {}
   };
 
   for (let i = 0; i < runs; i++) {
@@ -21,8 +22,11 @@ async function runSimulation() {
     });
 
     // Tags zählen
-    Object.entries(result.tags).forEach(([tag, val]) => {
-      stats.tags[tag] = (stats.tags[tag] || 0) + val;
+    Object.entries(result.tags).forEach(([category, tagsObj]) => {
+      if (!stats.tags[category]) stats.tags[category] = {};
+      Object.entries(tagsObj).forEach(([tag, val]) => {
+        stats.tags[category][tag] = (stats.tags[category][tag] || 0) + val;
+      });
     });
 
     // Properties zählen
@@ -31,6 +35,15 @@ async function runSimulation() {
     } else {
       result.properties.forEach(p => {
         stats.properties[p] = (stats.properties[p] || 0) + 1;
+      });
+    }
+
+    // Avatars zählen
+    if (result.avatars.length === 0) {
+      stats.avatars.Null = (stats.avatars.Null || 0) + 1;
+    } else {
+      result.avatars.forEach(a => {
+        stats.avatars[a] = (stats.avatars[a] || 0) + 1;
       });
     }
   }
@@ -47,36 +60,45 @@ async function runSimulation() {
 // --------------------
 function simulateOneRun() {
   let localAsked = [];
-  let localTags = {};
-  let localFollowUp = null;
+  let localTags = {
+    properties: {},
+    avatar: {},
+    story: {}
+  };
   let localBoostedQuestionId = null;
   let localAskedClusters = new Set();
 
-  for (let step = 0; step < 7; step++) {
-    let missingTags = checkProperties(properties, localTags);
+  for (let step = 0; step < (tagRequirements?.totalQuestions || 10); step++) {
+    let requiredTypes = getRequiredTagTypes(tagRequirements, localTags, localAsked.length);
+    let missingTags = collectMissingTags(properties, avatars, stories, localTags);
 
     let scored = questions.map(q => ({
       q,
-      weight: getWeight(q, missingTags, localAsked, localBoostedQuestionId, localAskedClusters)
+      weight: getWeight(q, missingTags, localAsked, localBoostedQuestionId, localAskedClusters, requiredTypes)
     }));
 
     let q = pickQuestion(scored);
+    if (!q) break;
 
     let answer = q.answers[Math.floor(Math.random() * q.answers.length)];
 
-    applyTags(answer.tags, localTags);
+    applyTags(answer, localTags);
 
     localBoostedQuestionId = answer.boostedQuestionId || null;
     localAskedClusters.add(q.cluster);
     localAsked.push(q.id);
   }
 
-  let achievedProps = getAchievedProperties(properties, localTags);
+  let achievedProps = getAchievedItems(properties, localTags.properties);
+  let achievedAvatars = getAchievedItems(avatars, localTags.avatar);
+  let achievedStories = getAchievedItems(stories, localTags.story);
 
   return {
     questions: localAsked,
     tags: localTags,
-    properties: achievedProps
+    properties: achievedProps,
+    avatars: achievedAvatars,
+    stories: achievedStories
   };
 }
 
@@ -94,7 +116,7 @@ function renderStats(stats, percentages) {
 
     Object.entries(obj)
       .sort((a, b) => b[1] - a[1])
-      .forEach(([key, val]) => {
+      .forEach(([key]) => {
 
         let percent = percentObj[key]?.toFixed(2) || 0;
 
@@ -105,10 +127,26 @@ function renderStats(stats, percentages) {
     return html;
   }
 
+  function createTagsHtml(statsTags, percentagesTags) {
+    let html = '';
+    Object.entries(statsTags).forEach(([category, tagsObj]) => {
+      html += `<h3>${category.charAt(0).toUpperCase() + category.slice(1)} tags</h3><ul>`;
+      Object.entries(tagsObj)
+        .sort((a, b) => b[1] - a[1])
+        .forEach(([tag, count]) => {
+          let percent = percentagesTags[category][tag]?.toFixed(2) || '0.00';
+          html += `<li>${tag}: ${percent}%</li>`;
+        });
+      html += '</ul>';
+    });
+    return html;
+  }
+
   container.innerHTML = `
     <h2>Simulation Ergebnis</h2>
     ${createList("Fragen", stats.questions, percentages.questions)}
-    ${createList("Tags", stats.tags, percentages.tags)}
+    ${createTagsHtml(stats.tags, percentages.tags)}
     ${createList("Properties", stats.properties, percentages.properties)}
+    ${createList("Avatars", stats.avatars, percentages.avatars)}
   `;
 }

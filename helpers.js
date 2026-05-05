@@ -1,100 +1,165 @@
 // Shared utility functions for story simulation and questionnaire flow.
 
-function normalizeData(questions, properties) {
+const TAG_GROUPS = {
+  propertyTags: "properties",
+  avatarTags: "avatar",
+  storyTags: "story",
+  tags: "properties"
+};
+
+function normalizeData(questions, properties, avatars, stories) {
   questions.forEach(q => {
+    q.questionType = q.questionType || "properties";
+
     q.answers.forEach(ans => {
-      ans.tags = ans.tags || {};
+      if (ans.tags) {
+        ans.propertyTags = ans.propertyTags || ans.tags;
+        delete ans.tags;
+      }
+
+      ans.propertyTags = ans.propertyTags || {};
+      ans.avatarTags = ans.avatarTags || {};
+      ans.storyTags = ans.storyTags || {};
       ans.boostedQuestionId = ans.boostedQuestionId || null;
     });
   });
 
-  properties.forEach(p => {
-    if (p.tags) {
-      p.allTags = p.tags;
-    } else {
-      p.allTags = [
-        ...(p.requiredTags || []),
-        ...(p.optionalTags || [])
-      ];
-    }
+  [properties, avatars, stories].forEach(list => {
+    list.forEach(item => {
+      if (item.tags) {
+        item.allTags = item.tags;
+      } else {
+        item.allTags = [
+          ...(item.requiredTags || []),
+          ...(item.optionalTags || [])
+        ];
+      }
+
+      if (!item.id) {
+        if (item.requiredTags?.length === 1) {
+          item.id = item.requiredTags[0];
+        } else if (item.name) {
+          item.id = item.name.trim();
+        }
+      }
+
+      if (typeof item.id === "string") {
+        item.id = item.id.trim();
+      }
+    });
   });
 }
 
-function applyTags(tags, state) {
-  for (let key in tags) {
-    state[key] = (state[key] || 0) + tags[key];
-  }
+function applyTags(answer, state) {
+  if (!answer) return;
+
+  Object.entries(TAG_GROUPS).forEach(([rawType, group]) => {
+    const tagGroup = answer[rawType];
+    if (!tagGroup || typeof tagGroup !== "object") return;
+
+    const bucket = state[group] || (state[group] = {});
+    Object.entries(tagGroup).forEach(([tag, value]) => {
+      bucket[tag] = (bucket[tag] || 0) + value;
+    });
+  });
 }
 
-function checkProperties(properties, tagState) {
-  let missingTags = [];
-
-  for (let prop of properties) {
-    let missing = [];
-
-    if (prop.requiredTags) {
-      for (let tag of prop.requiredTags) {
-        if (!tagState[tag]) {
-          missing.push(tag);
-        }
-      }
-    }
-
-    let optionalCount = prop.optionalTags
-      ? prop.optionalTags.filter(tag => tagState[tag]).length
-      : 0;
-
-    let optionalNeeded = prop.optionalRequired || 0;
-
-    if (missing.length === 0 && optionalCount >= optionalNeeded) {
-      console.log("✅ ERREICHT:", prop.name);
-    } else {
-      if (optionalCount < optionalNeeded) {
-        let stillNeeded = optionalNeeded - optionalCount;
-        let missingOptional = prop.optionalTags
-          ? prop.optionalTags.filter(tag => !tagState[tag])
-          : [];
-
-        missing.push(...missingOptional.slice(0, stillNeeded));
-      }
-
-      if (missing.length === 1) {
-        console.log("⚠️ FAST:", prop.name, "fehlt:", missing[0]);
-        missingTags.push(missing[0]);
-      }
-    }
-  }
-
-  return missingTags;
+function getTagTotal(state, group) {
+  const bucket = state[group] || {};
+  return Object.values(bucket).reduce((sum, val) => sum + val, 0);
 }
 
-function getWeight(q, missingTags, askedQuestions, boostedQuestionId, askedClusters) {
+function getRequiredTagTypes(requirements, tagState, questionCount) {
+  if (!requirements || questionCount < requirements.checkAfter) return [];
+
+  return Object.entries(requirements.minimums || {})
+    .filter(([type, min]) => getTagTotal(tagState, type) < min)
+    .map(([type]) => type);
+}
+
+function hasAnswerType(q, requiredTypes) {
+  if (!requiredTypes?.length) return true;
+
+  const qTypes = Array.isArray(q.questionType) ? q.questionType : [q.questionType];
+  if (qTypes.some(type => requiredTypes.includes(type))) return true;
+
+  return q.answers.some(ans =>
+    requiredTypes.some(type =>
+      type === "properties" ? Object.keys(ans.propertyTags || {}).length > 0
+        : type === "avatar" ? Object.keys(ans.avatarTags || {}).length > 0
+          : type === "story" ? Object.keys(ans.storyTags || {}).length > 0
+            : false
+    )
+  );
+}
+
+function getMissingTagsForItem(item, state, category) {
+  if (category === "story" && item.id) {
+    return state[item.id] ? [] : [item.id];
+  }
+
+  const missing = [];
+
+  if (item.requiredTags) {
+    item.requiredTags.forEach(tag => {
+      if (!state[tag]) missing.push(tag);
+    });
+  }
+
+  const optionalCount = item.optionalTags
+    ? item.optionalTags.filter(tag => state[tag]).length
+    : 0;
+  const optionalNeeded = item.optionalRequired || 0;
+
+  if (missing.length > 0) {
+    return missing;
+  }
+
+  if (optionalCount < optionalNeeded && item.optionalTags) {
+    const missingOptional = item.optionalTags.filter(tag => !state[tag]);
+    missing.push(...missingOptional.slice(0, optionalNeeded - optionalCount));
+  }
+
+  return missing;
+}
+
+function collectMissingTags(properties, avatars, stories, tagState) {
+  return [...new Set([
+    ...properties.flatMap(item => getMissingTagsForItem(item, tagState.properties, "properties")),
+    ...avatars.flatMap(item => getMissingTagsForItem(item, tagState.avatar, "avatar"))
+  ])];
+}
+
+function getWeight(q, missingTags, askedQuestions, boostedQuestionId, askedClusters, requiredTypes) {
   if (askedQuestions.includes(q.id)) return 0;
+  if (requiredTypes.length && !hasAnswerType(q, requiredTypes)) return 0;
 
-  let weight = 1;
-  let priority = q.priority || 0;
-  weight += priority;
-
+  let weight = 1 + (q.priority || 0);
   if (q.id === boostedQuestionId) weight += 10;
   if (!askedClusters.has(q.cluster)) weight += 5;
 
-  for (let ans of q.answers) {
-    for (let tag in ans.tags) {
-      if (missingTags.includes(tag)) {
-        weight += 20;
-      }
-    }
-  }
+  q.answers.forEach(ans => {
+    const allTags = {
+      ...ans.propertyTags,
+      ...ans.avatarTags,
+      ...ans.storyTags
+    };
+    Object.keys(allTags).forEach(tag => {
+      if (missingTags.includes(tag)) weight += 25;
+    });
+  });
 
   return weight;
 }
 
 function pickQuestion(scored) {
-  let total = scored.reduce((sum, s) => sum + s.weight, 0);
+  const total = scored.reduce((sum, s) => sum + s.weight, 0);
+  if (total <= 0) return scored[0]?.q;
+
   let rand = Math.random() * total;
   let acc = 0;
 
-  for (let s of scored) {
+  for (const s of scored) {
     acc += s.weight;
     if (rand <= acc) return s.q;
   }
@@ -102,82 +167,73 @@ function pickQuestion(scored) {
   return scored[0]?.q;
 }
 
-function getAchievedProperties(properties, tagState) {
-  let achieved = [];
-
-  for (let prop of properties) {
-    let missing = [];
-
-    if (prop.requiredTags) {
-      for (let tag of prop.requiredTags) {
-        if (!tagState[tag]) missing.push(tag);
-      }
-    }
-
-    let optionalCount = prop.optionalTags
-      ? prop.optionalTags.filter(tag => tagState[tag]).length
-      : 0;
-
-    let optionalNeeded = prop.optionalRequired || 0;
-
-    if (missing.length === 0 && optionalCount >= optionalNeeded) {
-      achieved.push(prop.name);
-    }
-  }
-
-  return achieved;
+function getAchievedItems(items, state, category = "properties") {
+  return items
+    .filter(item => getMissingTagsForItem(item, state, category).length === 0)
+    .map(item => item.name);
 }
 
-function getAlmostProperties(properties, tagState) {
-  let almost = [];
-
-  for (let prop of properties) {
-    let missing = [];
-
-    if (prop.requiredTags) {
-      for (let tag of prop.requiredTags) {
-        if (!tagState[tag]) missing.push(tag);
-      }
-    }
-
-    let optionalCount = prop.optionalTags
-      ? prop.optionalTags.filter(tag => tagState[tag]).length
-      : 0;
-
-    let optionalNeeded = prop.optionalRequired || 0;
-
-    if (missing.length + (optionalNeeded - optionalCount) === 1) {
-      almost.push(prop.name);
-    }
-  }
-
-  return almost;
+function getAlmostItems(items, state, category = "properties") {
+  return items
+    .filter(item => getMissingTagsForItem(item, state, category).length === 1)
+    .map(item => item.name);
 }
 
 function calculatePercentages(stats, runs) {
   let totals = {
-    questions: runs * 7,
-    tags: Object.values(stats.tags).reduce((a, b) => a + b, 0),
-    properties: Object.values(stats.properties).reduce((a, b) => a + b, 0)
+    questions: runs * (tagRequirements?.totalQuestions || 7),
+    tags: 0,
+    properties: Object.values(stats.properties).reduce((a, b) => a + b, 0),
+    avatars: Object.values(stats.avatars).reduce((a, b) => a + b, 0)
   };
+
+  Object.values(stats.tags).forEach(categoryObj => {
+    totals.tags += Object.values(categoryObj).reduce((a, b) => a + b, 0);
+  });
 
   let percentages = {
     questions: {},
     tags: {},
-    properties: {}
+    properties: {},
+    avatars: {}
   };
 
   Object.entries(stats.questions).forEach(([key, val]) => {
     percentages.questions[key] = (val / totals.questions) * 100;
   });
 
-  Object.entries(stats.tags).forEach(([key, val]) => {
-    percentages.tags[key] = (val / totals.tags) * 100;
+  Object.entries(stats.tags).forEach(([category, tagsObj]) => {
+    percentages.tags[category] = {};
+    Object.entries(tagsObj).forEach(([tag, val]) => {
+      percentages.tags[category][tag] = (val / totals.tags) * 100;
+    });
   });
 
   Object.entries(stats.properties).forEach(([key, val]) => {
     percentages.properties[key] = (val / totals.properties) * 100;
   });
 
+  Object.entries(stats.avatars).forEach(([key, val]) => {
+    percentages.avatars[key] = (val / totals.avatars) * 100;
+  });
+
   return percentages;
+}
+
+function exportResults(resultState) {
+  const exportData = {
+    tags: resultState.tags,
+    properties: resultState.properties,
+    avatar: resultState.avatar,
+    story: resultState.story
+  };
+
+  const dataStr = JSON.stringify(exportData, null, 2);
+  const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+  const exportFileDefaultName = 'results.json';
+
+  const linkElement = document.createElement('a');
+  linkElement.setAttribute('href', dataUri);
+  linkElement.setAttribute('download', exportFileDefaultName);
+  linkElement.click();
 }

@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Der Narr",
+    "id": "narr",
+    "text": "Der Narr beginnt die Reiseals unbeschriebenes Blatt, voller Potenzial, Neugier und Naivität.",
+    "number": 1
+  },
+  {
+    "name": "Der Magier",
+    "id": "magier",
+    "text": "Der Magier zeigt, dass man bereits Alles besitzt, um seine gewünschte Realität zu erschaffen und nicht viel materielles Braucht",
+    "number": 2
+  },
+  {
+    "name": "Die Hohenpriesterin",
+    "id": "hohenpriesterin",
+    "text": "Die Hohepriesterin lehrt bei einer Entscheidung der Intuition und innere Stimme zu vertrauen",
+    "number": 3
+  },
+  {
+    "name": "Der Herrscher",
+    "id": "herrscher",
+    "text": "Der Herrscher vermittelt Struktur, Ordnung und Regeln, um sicher auf seinem Weg zu sein",
+    "number": 4
+  },
+  {
+    "name": "Der Hierophant",
+    "id": "hierophant",
+    "text": "Der Hierophant zeigt die Wichtigkeit von Tradition, Gemeinschaft und Glaubenssystemen. Neue Kulturen und Religionen beeinflussen den Narren",
+    "number": 5
+  },
+  {
+    "name": "Die Liebenden",
+    "id": "liebenden",
+    "text": "Die Liebenden stehen für Entscheidungen, die das Selbst widerspiegeln. Du lässt dich nicht von außen beeinflussen und glaubst an deinen Wert. Forme neue Verbindungen mit deinen Mitmenschen",
+    "number": 6
+  },
+  {
+    "name": "Der Wagen",
+    "id": "wagen",
+    "text": "Der Wagen lehrt Willenskraft, Kontrolle und Zielstrebigkeit, Du stellst dich der Opposition und nimmst Dinge selber in die Hand",
+    "number": 7
+  },
+  {
+    "name": "Die Kraft",
+    "id": "kraft",
+    "text": "Die Kraft lehrt Mut, Geduld, Mitgefühl und seinen Ehrgeiz zu zügeln. Du meisterst Alles mit innerer Stärke",
+    "number": 8
+  },
+  {
+    "name": "Der Eremit",
+    "id": "eremit",
+    "text": "Der Eremit führt zur inneren Suche und Selbstreflexion. Kehre in dich selbst, um Antworten zu finden",
+    "number": 9
+  },
+  {
+    "name": "Das Rad des Schicksals",
+    "id": "radDesSchicksals",
+    "text": "Das Rad des Schicksals zeigt unvermeidbare Veränderungen und Zyklen. Lasse Dinge auf dich zukommen, manches ist unvermeidbar",
+    "number": 10
+  },
+  {
+    "name": "Die Gerechtigkeit",
+    "id": "gerechtigkeit",
+    "text": "Die Gerechtigkeit erfordert Balance und Verantwortung, die besten Entscheidungen zu treffen. Handle moralisch korrekt",
+    "number": 11
+  },
+  {
+    "name": "Der Gehängte",
+    "id": "gehängter",
+    "text": "Der Gehängte bringt Perspektivwechsel und den Mut loszulassen. Lasse dich auf Veränderung ein um das Hindernis leichter zu meistern",
+    "number": 12
+  },
+  {
+    "name": "Der Tod",
+    "id": "tod",
+    "text": "Der Tod steht für Transformation und Neubeginn am Ende eines Lebensabschnittes. Ein Alter Teil des Fools wird losgelassen ",
+    "number": 13
+  },
+  {
+    "name": "Die Mäßigkeit",
+    "id": "mäßigkeit",
+    "text": "Die Mäßigkeit lehrt Ausgleich, Vergebung und Harmonie. Verbinde Gegenteiliges und gehe den Mittelweg. Es besteht nicht immer die Notwendigkeit für sofortiges Handeln",
+    "number": 14
+  },
+  {
+    "name": "Der Teufel",
+    "id": "teufel",
+    "text": "Der Teufel konfrontiert Schattenseiten, Abhängigkeiten, selbstverschuldete Einschränkungen und gefangenschaft durch materielle begierde",
+    "number": 15
+  },
+  {
+    "name": "Der Turm",
+    "id": "turm",
+    "text": "Der Turm zerstört plötzlich alte, bekannte Strukturen und falsche Illusionen. Bekannte Wahrheiten brechen zusammen und werden hinterfragt. Man wird von der Entscheidung befreit",
+    "number": 16
+  },
+  {
+    "name": "Der Stern",
+    "id": "stern",
+    "text": "Der Stern bringt Hoffnung in die Zukunft, Heilung und Zuversicht",
+    "number": 17
+  },
+  {
+    "name": "Der Mond",
+    "id": "mond",
+    "text": "Der Mond herrscht Unsicherheit und Verwirrung, es gibt Geheimnisse. Deine Intuition führt dich durch das Unbewusste",
+    "number": 18
+  },
+  {
+    "name": "Die Sonne",
+    "id": "sonne",
+    "text": "Die Sonne erstrahlt den Weg in Klarheit, Positivität und Erfolg. Sei kreativ und Fröhlich",
+    "number": 19
+  },
+  {
+    "name": "Das Gericht",
+    "id": "gericht",
+    "text": "Das Gericht lässt dich reflektieren und Verantwortung über deine Taten übernehmen, bringt Erkenntnis und Wiedergeburt. Du wirst berufen, deiner wahren Bestimmung nachzugehen. Es gibt eine Finale Entscheidung",
+    "number": 20
+  },
+  {
+    "name": "Die Welt",
+    "id": "welt",
+    "text": "Die Welt symbolisiert Vollendung und Ganzheit. Das große Ziel wird erreicht und gefeiert",
+    "number": 21
+  }
+]
